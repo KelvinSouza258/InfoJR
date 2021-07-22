@@ -4,10 +4,10 @@ Esta atividade lhe ajudará a entender o que é o React e como ele funciona por 
 
 ## Informações principais
 
-- **Núcleo: Front-end**
-- **Orientador: [Abner Rodrigues](@todomir)**
-- **Data da Atividade: 23/07**
-- **Data de Entrega: 30/07**
+- **Núcleo:** Front-end
+- **Orientador:** [Abner Rodrigues](@todomir)
+- **Data da Atividade:** 23/07
+- **Data de Entrega:** 30/07
 
 ## Descrição da atividade
 
