@@ -1,6 +1,6 @@
 # Núcleo de Front-end
 
-Olá, pessoa! Seja bem vindo ao Núcleo de **Front-end**!
+Olá, pessoa! Seja bem vindo ao Núcleo de Front-end!
 
 Este repositório será usado para ver e fazer as atividades do núcleo durante este ciclo. Você precisará clonar este repositório no seu computador.
 
