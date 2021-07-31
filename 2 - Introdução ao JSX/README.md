@@ -19,6 +19,8 @@ Nesta atividade, você irá explorar o conceito de componentes criando os seus p
 
 Você terá que dividir a página em diferentes componentes. Como você vai fazer essa divisão fica a seu critério, mas a eficácia de sua divisão será observada.
 
+Além disso, neste núcleo usaremos o Typescript, então você deverá pesquisar sobre o Typescript e implementar seu código utilizando ele.
+
 ### Regras
 
 - Você deverá recriar a interface descrita na seção de [descrição da atividade](#descricao-da-atividade)
@@ -34,3 +36,8 @@ Você terá que dividir a página em diferentes componentes. Como você vai faze
 - [Como Criar Componentes Personalizados no React](https://www.digitalocean.com/community/tutorials/how-to-create-custom-components-in-react-pt)
 - [Introduction to React Components](https://www.youtube.com/watch?v=FMl8vXPGqCI)
 - [React Functional Components, Props, and JSX – React.js Tutorial for Beginners](https://www.freecodecamp.org/news/react-components-jsx-props-for-beginners/)
+- [TypeScript, o início, de forma prática](https://youtu.be/0mYq5LrQN1s)
+- [TypeScript Tutorial for JS Programmers Who Know How to Build a Todo App](https://ts.chibicode.com/todo/)
+- [Understanding TypeScript’s type notation](https://2ality.com/2018/04/type-notation-typescript.html)
+- [Setup TypeScript with React](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
+- [React Typescript Tutorial](https://youtu.be/Z5iWr6Srsj8)
