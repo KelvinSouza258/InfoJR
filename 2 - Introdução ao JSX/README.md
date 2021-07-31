@@ -23,6 +23,7 @@ Além disso, neste núcleo usaremos o Typescript, então você deverá pesquisar
 
 ### Regras
 
+- O uso do Typescript é obrigatório e sua habilidade de tipar corretamente será avaliada
 - Você deverá recriar a interface descrita na seção de [descrição da atividade](#descricao-da-atividade)
 - A forma de estilização fica à seu critério (Tailwind ou CSS puro)
 - Seu código deverá ter pelo menos um componente que possa ser reutilizado dentro do contexto da interface
