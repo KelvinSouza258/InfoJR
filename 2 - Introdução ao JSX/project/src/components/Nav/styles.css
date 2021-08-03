@@ -14,10 +14,11 @@
     font-size: 17px;
     font-weight: 700;
     color: #ffffff;
+    transition: .3s;
 }
 
 .btn-header:hover {
-    background-color: #ff5319;
+    background-color: #ff4b0f;
 }
 
 .navbar {
