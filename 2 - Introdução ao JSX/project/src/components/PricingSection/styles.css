@@ -1,0 +1,43 @@
+.price-section {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 250px;
+}
+
+.price-title {
+    font-size: 60px;
+    width: 523px;
+}
+
+.switch {
+    display: flex;
+}
+
+.switch div {
+    text-align: center;
+    font-weight: 700;
+    padding: 16px 8px;
+    width: 160px;
+    background-color: #F7F7FB;
+    border-radius: 0 10px 10px 0;
+}
+
+div.purple {
+    background-color: #5454D4;
+    border-radius: 10px 0 0 10px;
+    color: #FFFFFF;
+}
+
+.price-cards {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 160px;
+}

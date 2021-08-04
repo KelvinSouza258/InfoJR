@@ -4,7 +4,7 @@ import './styles.css';
 
 export default function Header() {
     return (
-        <header className='header'>
+        <div className='header'>
             <img src={logo} alt='' />
             <nav>
                 <ul className='navbar'>
@@ -15,6 +15,6 @@ export default function Header() {
                 </ul>
             </nav>
             <button className='btn-header'>Get Started</button>
-        </header>
+        </div>
     );
 }
