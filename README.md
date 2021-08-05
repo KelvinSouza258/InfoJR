@@ -6,7 +6,9 @@ Este repositório será usado para ver e fazer as atividades do núcleo durante 
 
 ## Instruções de envio de atividades
 
-Crie uma branch a partir da `main` seguindo o padrão `[número da atividade]-[nome do indivíduo]` para fazer cada atividade (por exemplo: `2-fulano` para desenvolver a 2ª atividade do núcleo).
+Crie uma branch a partir da `main` com o seu nome, usando *kebab-case*, para fazer cada atividade (por exemplo: `abner-rodrigues`).
+
+Para cada atividade, você deverá desenvolver o código inteiramente na pasta da atividade, dando pull da branch `main` quando novas atividades forem enviadas.
 
 Seus commits deverão ser contínuos e explicativos, então nada de fazer a atividade inteira em um só commit com a mensagem _"atividade do nucleo ae"_, beleza? Os orientadores precisam acompanhar o progresso dos membros, e isso será feito através dos seus commits no GitLab.
 
