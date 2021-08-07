@@ -1,0 +1,6 @@
+.card-section {
+    margin-top: 138px;
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+}

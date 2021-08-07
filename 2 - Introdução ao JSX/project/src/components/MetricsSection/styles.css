@@ -1,0 +1,7 @@
+.metrics-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 83px;
+    gap: 158px;
+}
