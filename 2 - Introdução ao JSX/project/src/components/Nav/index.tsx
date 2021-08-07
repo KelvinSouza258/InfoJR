@@ -8,10 +8,10 @@ export default function Header() {
             <img src={logo} alt='' />
             <nav>
                 <ul className='navbar'>
-                    <li><a href='https://google.com' className='nav-item nav-selected'>Home</a></li>
-                    <li><a href='https://google.com' className='nav-item'>Features</a></li>
-                    <li><a href='https://google.com' className='nav-item'>Pricing</a></li>
-                    <li><a href='https://google.com' className='nav-item'>Blog</a></li>
+                    <li><a href='#' className='nav-item nav-selected'>Home</a></li>
+                    <li><a href='#' className='nav-item'>Features</a></li>
+                    <li><a href='#' className='nav-item'>Pricing</a></li>
+                    <li><a href='#' className='nav-item'>Blog</a></li>
                 </ul>
             </nav>
             <button className='btn-header'>Get Started</button>
