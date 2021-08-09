@@ -40,4 +40,4 @@ Sua atividade será pesquisar sobre o React, principalmente o que é e como sua 
 
 ## Entrega
 
-- [Matheus Quevedo]: [https://docs.google.com/document/d/1IlklXz-aZixHCWjK-we0631yJudTTRcAKozz2bdvqoU/edit]
+- [Seu nome]: [Link da atividade]
