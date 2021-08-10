@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #242426;
+}
+
+.App {
+    font-family: 'Roboto', 'sans-serif';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 95px;
+    height: 100vh;
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    padding-top: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    gap: 14px;
+    align-items: center;
+}
+
+form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 768px;
+    gap: 36px;
+}
+
+.form-info {
+    text-align: center;
+}
+
+.form-title {
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.instruction {
+    color: #575f6e;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.checkbox-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.terms-anchor {
+    font-weight: 500;
+    color: #007aff;
+}
+
+.terms-anchor:hover {
+    text-decoration: underline;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    background-color: black;
+}
+
+.personal-info {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 40px;
+    border-top: 1px solid #bbbfc1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.info-paragraph {
+    font-weight: 300;
+    font-size: 12px;
+    color: #575f6e;
+}
+
+.input-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-info > input {
+    padding: 8px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    border-bottom: 1px solid #e2e4e5;
+}
+
+button {
+    padding: 12px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border: 1px solid #bbbfc1;
+    background-color: #ffffff;
+}
+
+button:disabled {
+    color: #bbbfc1;
+    background-color: #e2e4e5;
+}
