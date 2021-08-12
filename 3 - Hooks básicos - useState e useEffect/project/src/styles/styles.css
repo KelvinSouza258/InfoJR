@@ -112,6 +112,11 @@ form {
     font-size: 18px;
     border-bottom: 1px solid #e2e4e5;
 }
+.numbers-info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
 
 button {
     padding: 12px 32px;
@@ -121,6 +126,11 @@ button {
     border: 1px solid #bbbfc1;
     background-color: #ffffff;
     transition: all 0.2s;
+}
+
+.btn-form {
+    display: flex;
+    align-items: center;
 }
 
 button:hover {
@@ -244,6 +254,10 @@ button:disabled {
 
     .modal-title {
         margin-bottom: 12px;
+    }
+
+    .numbers-info {
+        flex-direction: row;
     }
 }
 

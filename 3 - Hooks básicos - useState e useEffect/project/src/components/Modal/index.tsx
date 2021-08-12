@@ -7,9 +7,16 @@ interface IModalProps {
     secondName: String;
     email: String;
     cpf: String;
+    clearInputs: () => void;
 }
 
-const Modal = ({ firstName, secondName, email, cpf }: IModalProps) => {
+const Modal = ({
+    firstName,
+    secondName,
+    email,
+    cpf,
+    clearInputs,
+}: IModalProps) => {
     const [modalOpen, setModal] = useContext(ModalContext);
 
     return (
@@ -43,7 +50,10 @@ const Modal = ({ firstName, secondName, email, cpf }: IModalProps) => {
                 </div>
                 <button
                     className="btn-modal"
-                    onClick={() => setModal(!modalOpen)}
+                    onClick={() => {
+                        setModal(!modalOpen);
+                        clearInputs();
+                    }}
                 >
                     Concluir
                 </button>
