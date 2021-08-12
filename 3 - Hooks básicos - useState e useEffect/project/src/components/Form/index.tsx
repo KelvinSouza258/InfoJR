@@ -89,11 +89,13 @@ const Form = () => {
                     </span>
                 </label>
                 <div className="personal-info">
-                    <h2 className="info-title">Dados Pessoais</h2>
-                    <p className="info-paragraph">
-                        Prometemos não vender seus dados para agências de
-                        marketing ;)
-                    </p>
+                    <div className="info-header">
+                        <h2 className="info-title">Dados Pessoais</h2>
+                        <p className="info-paragraph">
+                            Prometemos não vender seus dados para agências de
+                            marketing ;)
+                        </p>
+                    </div>
 
                     <label className="input-info">
                         Nome
@@ -132,7 +134,7 @@ const Form = () => {
                         />
                     </label>
 
-                    <div className='numbers-info'>
+                    <div className="numbers-info">
                         <label className="input-info">
                             Data de nascimento (DD/MM/AAAA)
                             <input
