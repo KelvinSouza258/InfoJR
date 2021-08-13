@@ -17,7 +17,7 @@ Pensando nessas questões, existem 2 hooks que podem ajudar a gente a manter nos
 
 O **useReducer** é um hook que recebe um objeto de estado e uma função *dispatch* e retorna um novo estado. Este hook é utilizado bastante para manipular o estado baseado em ações, e não somente manipulá-lo diretamente. Este hook é baseado no padrão [Redux](https://www.dotnetcurry.com/reactjs/1356/redux-pattern-tutorial) e pode ser utilizado para manipular o estado de forma mais limpa.
 
-O **useRef** é um hook que retorna um *ref*. O *ref* é basicamente uma referência inafetada pelo processo de render do React, de forma que uma alteração num *ref* não é refletida na UI. O **useRef** é bastante utilizado para salvar referências à elementos da DOM, de forma a manipula-los diretamente, semelhante a um query selector declarativo.
+O **useRef** é um hook que retorna um *ref*. O *ref* é basicamente uma referência que guarda um valor que não irá afetar o processo de render do React, de forma que uma alteração num *ref* não é refletida na UI. O **useRef** é bastante utilizado para salvar referências à elementos da DOM, de forma a manipula-los diretamente, semelhante a um query selector declarativo.
 
 O [mockup](https://www.figma.com/file/rLVDzUeLbRbwvR82oCOGON/Cname?node-id=0%3A1) do projeto deve ainda é o mesmo, porém, deverá ser implementado utilizando estes hooks, em conjunto com a validação básica.
 
