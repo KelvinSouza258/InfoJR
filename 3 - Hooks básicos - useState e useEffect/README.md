@@ -41,3 +41,5 @@ Nesta atividade, você irá explorar o conceito de hooks, estado e efeitos colat
   - De 03:10 até 14:45
 - [10 React Hooks Explained // Plus Build your own from Scratch](https://youtu.be/TNhaISOUy6Q)
   - De 02:20 até 05:55
+- [No BS TS](https://www.youtube.com/playlist?list=PLNqp92_EXZBJYFrpEzdO2EapvU0GOJ09n)
+- [React - Guia completo de Formulários](https://youtu.be/Uv4h8IJhQUg)
