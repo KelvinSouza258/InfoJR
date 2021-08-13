@@ -1,4 +1,4 @@
-# Atividade 3 - Hooks básicos: useReducer e useRef
+# Atividade 4 - Hooks básicos: useReducer e useRef
 
 Nessa aula, iremos avançar um pouco no conceito de hooks com uns hooks um pouco mais avançados.
 
