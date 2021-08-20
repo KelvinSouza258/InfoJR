@@ -3,6 +3,7 @@ import arrow from '../../assets/arrow.png';
 import disabledArrow from '../../assets/disableArrow.png';
 import ModalContext from '../../ModalContext';
 import Modal from '../Modal';
+import InputMask from 'react-input-mask'
 
 const formInput = {
     agree: false,
@@ -88,11 +89,9 @@ const Form = () => {
     const validateForm = () => {
         if (userInfo.secondName.length < 2) {
             secondNameError.current?.classList.remove('hidden');
-            secondNameError.current?.focus();
         }
         if (userInfo.firstName.length < 2) {
             firstNameError.current?.classList.remove('hidden');
-            firstNameError.current?.focus();
         }
         if (
             userInfo.secondName.length >= 2 &&
@@ -251,10 +250,10 @@ const Form = () => {
                     <div className="numbers-info">
                         <label className="input-info">
                             Data de nascimento (DD/MM/AAAA)
-                            <input
-                                type="text"
-                                placeholder="00/00/0000"
+                            <InputMask
+                                mask="99/99/9999"
                                 value={userInfo.birthDate}
+                                placeholder="00/00/0000"
                                 onChange={(e) =>
                                     dispatch({
                                         type: 'birthDate',
@@ -268,8 +267,8 @@ const Form = () => {
 
                         <label className="input-info">
                             CPF
-                            <input
-                                type="text"
+                            <InputMask
+                                mask="999.999.999-99"
                                 placeholder="000.000.000-00"
                                 value={userInfo.cpf}
                                 onChange={(e) =>
