@@ -1,0 +1,25 @@
+article {
+    width: 459px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.article-title {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.article-text {
+    font-size: 20px;
+}
+
+.article-anchor {
+    font-size: 17px;
+    font-weight: 700;
+    color: #5454D4;
+}
+
+.article-anchor:hover {
+    text-decoration: underline;
+}

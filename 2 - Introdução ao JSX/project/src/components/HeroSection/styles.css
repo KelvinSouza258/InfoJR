@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 74px;
+    margin-top: 100px;
+}
+
+.textarea {
+    max-width: 462px;
+}
+
+.title {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.paragraph {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.btn-area {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.btn-start {
+    font-size: 17px;
+    padding: 20px 60px;
+    color: #ffffff;
+    background-color: #5454d4;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-start:hover {
+    background-color: #4747a0;
+}
+
+.btn-arrow {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #e7e7e7;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-arrow:hover {
+    background-color: #e7e7e7;
+}
