@@ -1,0 +1,8 @@
+.logos {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    gap: 120px;
+}

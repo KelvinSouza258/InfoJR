@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #242426;
+}
+
+.App {
+    position: relative;
+    font-family: 'Roboto', 'sans-serif';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    min-height: 100vh;
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    padding-top: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    gap: 14px;
+    align-items: center;
+}
+
+form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 768px;
+    gap: 36px;
+}
+
+.form-info {
+    text-align: center;
+}
+
+.form-title {
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.instruction {
+    color: #575f6e;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.checkbox-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.terms-anchor {
+    font-weight: 500;
+    color: #007aff;
+}
+
+.terms-anchor:hover {
+    text-decoration: underline;
+}
+
+.personal-info {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 40px;
+    border-top: 1px solid #bbbfc1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.info-paragraph {
+    font-weight: 300;
+    font-size: 12px;
+    color: #575f6e;
+}
+
+.input-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-info > input {
+    padding: 8px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    border-bottom: 1px solid #e2e4e5;
+}
+.numbers-info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.numbers-info > * {
+    flex-grow: 1;
+}
+
+button {
+    padding: 12px 32px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid #bbbfc1;
+    background-color: #ffffff;
+    transition: all 0.2s;
+}
+
+.btn-form {
+    display: flex;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+button:disabled {
+    cursor: initial;
+    color: #bbbfc1;
+    background-color: #e2e4e5;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(105, 99, 99, 0.38);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    flex-basis: 80%;
+    max-width: 672px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    max-height: 70%;
+    gap: 40px;
+}
+
+.modal-header {
+    font-weight: 300;
+    font-size: 16px;
+    color: #575f6e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 16px;
+    gap: 20px;
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-title {
+    font-family: 'Poppins', sans-serif;
+    color: #242731;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.check-img {
+    width: 100px;
+}
+
+.btn-modal {
+    cursor: pointer;
+}
+
+.input-error {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .App {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .logo-section {
+        color: #ffffff;
+        align-items: flex-start;
+        padding-top: 40px;
+        padding-left: 90px;
+        flex-basis: 50%;
+        background-color: #242731;
+    }
+
+    form {
+        flex-basis: 50%;
+        min-width: 550px;
+        padding: 0;
+        margin: 112px 44px 44px 0;
+        flex-grow: 1;
+        align-items: flex-start;
+    }
+
+    .form-info {
+        text-align: start;
+    }
+
+    .personal-info {
+        width: 100%;
+        border: 1px solid #bbbfc1;
+        padding: 32px;
+    }
+
+    .modal-content {
+        align-items: flex-start;
+        max-height: 516px;
+        gap: 24px;
+        padding: 60px;
+    }
+
+    .modal-header {
+        flex-direction: row;
+        text-align: start;
+        margin-bottom: 0;
+        gap: 36px;
+    }
+
+    .modal-title {
+        margin-bottom: 12px;
+    }
+
+    .numbers-info {
+        flex-direction: row;
+    }
+}
