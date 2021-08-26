@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+.App {
+    min-height: 100vh;
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    padding: 38px 34px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    position: relative;
+}
+
+.App-dark {
+    background-color: #1c1e2c;
+    color: #ffffff;
+}
+
+.dark-mode-input {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-container {
+    width: 32px;
+    height: 16px;
+    border-radius: 100px;
+    background-color: rgba(29, 33, 67, 0.1);
+    margin-right: 16px;
+    position: relative;
+}
+
+.switch-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #bababa;
+    transition: 0.3s all ease;
+}
+
+.checkbox:checked + .switch-container {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.checkbox:checked + .switch-container > .switch-button::before {
+    transform: translateX(16px);
+    background-color: #ffffff;
+}

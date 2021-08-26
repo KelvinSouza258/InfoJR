@@ -7,16 +7,22 @@
     padding: 64px 32px;
     gap: 64px;
     background-color: #ffffff;
+    color: #1d2143;
+}
+
+.dark-login-form {
+    background-color: #232430;
+    color: #ffffff;
 }
 
 .login-title {
-    color: #1d2143;
+    color: inherit;
     font-size: 32px;
     text-align: center;
     margin-bottom: 4px;
 }
 
-.login-msg {
+.login-paragraph {
     color: #b2b3bf;
     font-weight: 400;
     text-align: center;
@@ -46,12 +52,23 @@
     flex-direction: column;
 }
 
-.login-label > input {
-    border: 1px solid #B2B3BF;
+.login-input {
+    border: 1px solid #b2b3bf;
+    border-radius: 4px;
     padding: 16px;
 }
 
-.login-label > span {
+.dark-login-input {
+    background-color: #232430;
+    color: #ffffff;
+    border-color: #b2b3bf;
+}
+
+.dark-login-input::placeholder {
+    color: #b2b3bf;
+}
+
+.login-span {
     font-size: 12px;
     margin-left: 12px;
     padding: 0 4px;
@@ -59,6 +76,10 @@
     position: relative;
     align-self: flex-start;
     top: 8px;
+}
+
+.dark-login-span {
+    background-color: #232430;
 }
 
 .btn-eye {
@@ -69,4 +90,25 @@
     margin-right: 16px;
     border: none;
     bottom: 32px;
+}
+
+.login-msg {
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: flex;
+    background-color: #3eb843;
+    color: #ffffff;
+    padding: 8px 16px;
+    gap: 25px;
+    transition: 0.3s;
+}
+
+.dark-login-msg {
+    background-color: #354f36;
+}
+
+.hidden {
+    opacity: 0;
 }

@@ -1,0 +1,35 @@
+.dashboard {
+    width: 100%;
+    flex-basis: 548px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 32px;
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+
+.dark-dashboard {
+    background-color: #232430;
+}
+
+.user-info {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn-logout {
+    height: 56px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #0147fa;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.btn-logout:hover {
+    background-color: #A6BFFD;
+    color: #0147FA;
+}
