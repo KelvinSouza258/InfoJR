@@ -1,14 +1,17 @@
 import './styles.css';
 import { useState, FormEvent, useContext, Dispatch } from 'react';
 import { useCookies } from 'react-cookie';
+import ThemeContext from '../../ThemeContext';
 import eye from '../../assets/Eye.svg';
 import eyeWhite from '../../assets/EyeWhite.svg';
 import eyeSlash from '../../assets/EyeSlash.svg';
 import eyeSlashWhite from '../../assets/EyeSlashWhite.svg';
-import checkIcon from '../../assets/Icon.svg';
-import ThemeContext from '../../ThemeContext';
 
-function Login() {
+function Login({
+    setLoginMsg,
+}: {
+    setLoginMsg: Dispatch<React.SetStateAction<boolean>>;
+}) {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const handleEyeClick = () => {
         setPasswordVisible(!passwordVisible);
@@ -24,13 +27,12 @@ function Login() {
         setCookies('email', email);
         setLoginMsg(true);
         await fakeTimerForLogin(3000);
-        setCookies('auth', true);
+        setCookies('auth', 'true');
         setLoginMsg(false);
 
         window.location.reload();
     };
 
-    const [loginMsg, setLoginMsg] = useState(false);
     const [cookies, setCookies] = useCookies();
     const [email, setEmail] = useState(cookies.email);
     const darkMode = useContext(ThemeContext);
@@ -38,7 +40,9 @@ function Login() {
     return (
         <>
             <form
-                className={`login-form ${darkMode ? 'dark-login-form' : ''}`}
+                className={`transition login-form ${
+                    darkMode ? 'dark-login-form' : ''
+                }`}
                 onSubmit={handleSubmit}
             >
                 <div>
@@ -58,12 +62,13 @@ function Login() {
                             Email
                         </span>
                         <input
-                            className={`login-input ${
+                            className={`transition login-input ${
                                 darkMode ? 'dark-login-input' : ''
                             }`}
                             type="email"
-                            placeholder="kelvinsouza@infojr.com.br"
+                            placeholder="Seu email"
                             value={email}
+                            required={true}
                             onChange={(e) => {
                                 setEmail(e.target.value);
                             }}
@@ -75,14 +80,14 @@ function Login() {
                                 darkMode ? 'dark-login-span' : ''
                             }`}
                         >
-                            Password
+                            Senha
                         </span>
                         <input
-                            className={`login-input ${
+                            className={`transition login-input ${
                                 darkMode ? 'dark-login-input' : ''
                             }`}
                             type={passwordVisible ? 'text' : 'password'}
-                            placeholder="Sua Senha"
+                            placeholder="Sua senha"
                         />
                         <button
                             type="button"
@@ -93,11 +98,11 @@ function Login() {
                                 src={
                                     passwordVisible
                                         ? darkMode
-                                            ? eyeWhite
-                                            : eye
+                                            ? eyeSlashWhite
+                                            : eyeSlash
                                         : darkMode
-                                        ? eyeSlashWhite
-                                        : eyeSlash
+                                        ? eyeWhite
+                                        : eye
                                 }
                                 alt="an eye"
                             />
@@ -107,14 +112,6 @@ function Login() {
 
                 <button className="btn-login">Fazer Login</button>
             </form>
-
-            <div className={loginMsg ? 'login-msg' : 'hidden login-msg'}>
-                <img src={checkIcon} alt="" />
-                <p>
-                    Login efetuado com sucesso! Aguarde um momento enquanto
-                    atualizamos a página
-                </p>
-            </div>
         </>
     );
 }

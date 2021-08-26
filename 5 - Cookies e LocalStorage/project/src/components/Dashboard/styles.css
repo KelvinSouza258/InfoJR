@@ -1,8 +1,10 @@
 .dashboard {
     width: 100%;
-    flex-basis: 548px;
+    max-width: 997px;
+    flex-basis: 546px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     padding: 64px 32px;
     border-radius: 30px;
@@ -24,6 +26,8 @@
     color: #ffffff;
     cursor: pointer;
     background-color: #0147fa;
+    width: 70%;
+    max-width: 321px;
     font-weight: 700;
     font-size: 14px;
     border-radius: 8px;
@@ -32,4 +36,16 @@
 .btn-logout:hover {
     background-color: #A6BFFD;
     color: #0147FA;
+}
+
+@media screen and (min-width: 768px) {
+    .dashboard {
+        align-items: center;
+        padding: 100px 180px;
+    }
+
+    .user-info {
+        margin-top: 40px;
+        font-size: 32px;
+    }
 }

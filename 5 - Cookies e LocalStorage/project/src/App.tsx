@@ -3,28 +3,24 @@ import DashBoard from './components/Dashboard';
 import Login from './components/Login';
 import { useCookies } from 'react-cookie';
 import ThemeContext from './ThemeContext';
-import './global.css';
+import checkIcon from './assets/Icon.svg';
+import './App.css';
 
 function App() {
-    const [darkMode, setDarkMode] = useState(false);
+    const theme = localStorage.getItem('theme');
+    const [loginMsg, setLoginMsg] = useState(false);
+    const [darkMode, setDarkMode] = useState(theme === 'dark' ? true : false);
     const [cookies] = useCookies(['auth', 'email']);
 
     useEffect(() => {
-        const theme = localStorage.getItem('theme');
-        if (theme) {
-            if (theme === 'dark') {
-                setDarkMode(true);
-            } else {
-                setDarkMode(false);
-            }
-        } else {
+        if (!theme) {
             localStorage.setItem('theme', 'light');
         }
     }, []);
 
     return (
         <ThemeContext.Provider value={darkMode}>
-            <div className={`App ${darkMode ? 'App-dark' : ''}`}>
+            <div className={`transition App ${darkMode ? 'App-dark' : ''}`}>
                 <label className="dark-mode-input">
                     <input
                         className="checkbox"
@@ -43,14 +39,26 @@ function App() {
                     </div>
                     <span>Dark Mode</span>
                 </label>
-                {cookies.auth ? (
-                    <>
-                        <DashBoard email={cookies.email} />
-                        <div></div>
-                    </>
+                {cookies.auth === 'true' ? (
+                    <DashBoard />
                 ) : (
-                    <Login />
+                    <Login setLoginMsg={setLoginMsg} />
                 )}
+                <div
+                    className={
+                        loginMsg
+                            ? darkMode
+                                ? 'dark-login-msg login-msg'
+                                : 'login-msg'
+                            : 'hidden login-msg'
+                    }
+                >
+                    <img src={checkIcon} alt="" />
+                    <p>
+                        Login efetuado com sucesso! Aguarde um momento enquanto
+                        atualizamos a página
+                    </p>
+                </div>
             </div>
         </ThemeContext.Provider>
     );
