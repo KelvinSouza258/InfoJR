@@ -1,6 +1,6 @@
 .dashboard {
     width: 100%;
-    max-width: 997px;
+    max-width: 700px;
     flex-basis: 546px;
     display: flex;
     flex-direction: column;
@@ -34,18 +34,18 @@
 }
 
 .btn-logout:hover {
-    background-color: #A6BFFD;
-    color: #0147FA;
+    background-color: #a6bffd;
+    color: #0147fa;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 1440px) {
     .dashboard {
-        align-items: center;
         padding: 100px 180px;
+        flex-basis: 590px;
+        max-width: 998px;
     }
 
     .user-info {
-        margin-top: 40px;
         font-size: 32px;
     }
 }

@@ -24,6 +24,8 @@ function Login({
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        window.scrollTo(0, document.body.scrollHeight);
+
         setCookies('email', email);
         setLoginMsg(true);
         await fakeTimerForLogin(3000);
