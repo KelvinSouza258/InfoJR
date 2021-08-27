@@ -110,6 +110,5 @@ html {
 @media screen and (min-width: 768px) {
     .dark-mode-input {
         align-self: flex-start;
-        margin: 0;
     }
 }

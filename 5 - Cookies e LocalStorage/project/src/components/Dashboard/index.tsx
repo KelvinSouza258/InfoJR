@@ -8,14 +8,14 @@ function DashBoard() {
     const [cookies, setCookies] = useCookies(['auth','email']);
 
     const handleClick = () => {
-        setCookies('auth', 'false');
+        setCookies('auth', 'false', { expires: new Date(9999, 0, 1) });
         window.location.reload();
     };
 
     return (
-        <div className={`dashboard ${darkMode ? 'dark-dashboard' : ''}`}>
+        <div className={`transition dashboard ${darkMode ? 'dark-dashboard' : ''}`}>
             <p className={`user-info ${darkMode ? 'dark-user-info' : ''}`}>
-                O usuário {cookies.email} está logado
+                O usuário {cookies.email.slice(0, cookies.email.indexOf('@'))} está logado
             </p>
             <button onClick={handleClick} className="btn-logout">
                 Fazer logout

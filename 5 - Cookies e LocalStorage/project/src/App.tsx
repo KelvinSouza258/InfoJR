@@ -13,7 +13,6 @@ function App() {
     const [cookies] = useCookies(['auth', 'email']);
 
     useEffect(() => {
-        window.scrollTo(0,0);
         if (!theme) {
             localStorage.setItem('theme', 'light');
         }

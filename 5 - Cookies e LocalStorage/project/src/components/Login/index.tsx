@@ -26,10 +26,10 @@ function Login({
 
         window.scrollTo(0, document.body.scrollHeight);
 
-        setCookies('email', email);
+        setCookies('email', email, { expires: new Date(9999, 0, 1) });
         setLoginMsg(true);
-        await fakeTimerForLogin(3000);
-        setCookies('auth', 'true');
+        await fakeTimerForLogin(3500);
+        setCookies('auth', 'true', { expires: new Date(9999, 0, 1) });
         setLoginMsg(false);
 
         window.location.reload();
