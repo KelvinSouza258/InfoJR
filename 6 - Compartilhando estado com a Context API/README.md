@@ -1,4 +1,4 @@
-# Atividade 5 - Compartilhando estado com a Context API
+# Atividade 6 - Compartilhando estado com a Context API
 
 Nessa aula, vamos aprender como compartilhar estado com a API de contexto do React.
 
