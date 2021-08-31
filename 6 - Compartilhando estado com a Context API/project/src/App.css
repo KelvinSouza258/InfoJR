@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.App {
+    min-height: 100vh;
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    padding: 38px 35px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #e5e5e5;
+    position: relative;
+}
+
+.App-dark {
+    background-color: #1c1e2c;
+    color: #ffffff;
+}
+
+.login-msg {
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: flex;
+    background-color: #3eb843;
+    color: #ffffff;
+    padding: 8px 16px;
+    gap: 26px;
+    max-width: 90%;
+    box-shadow: 0px 4.273645877838135px 7.957182884216309px 0px #0e2a0e54;
+    transition: 0.3s;
+}
+
+.dark-login-msg {
+    background-color: #354f36;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.transition {
+    transition: background-color 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+    .dark-mode-input {
+        align-self: flex-start;
+    }
+}

@@ -1,0 +1,80 @@
+.dashboard {
+    width: 66%;
+    max-width: 1168px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    margin-top: 90px;
+}
+
+.welcome-msg {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.user-info {
+    display: flex;
+    gap: 42px;
+}
+
+.user-data {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 24px 36px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.data-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+}
+
+.data-value {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.gallery {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.gallery-content {
+    margin-top: 24px;
+    flex-grow: 1;
+    min-height: 430px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    gap: 44px;
+}
+
+.gallery-content > p {
+    color: #b2b3bf;
+    width: 250px;
+    text-align: center;
+}
+
+.gallery-content button {
+    cursor: pointer;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #0147fa;
+    width: 320px;
+    height: 56px;
+    font-weight: 700;
+}
+
+.gallery-content button:hover {
+    background-color: #a6bffd;
+}
