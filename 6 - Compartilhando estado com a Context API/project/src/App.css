@@ -55,6 +55,10 @@ html {
     opacity: 0;
 }
 
+.error {
+    background-color: #e9453a;
+}
+
 .transition {
     transition: background-color 0.3s;
 }

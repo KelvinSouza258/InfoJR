@@ -1,16 +1,11 @@
 import './styles.css';
-import ThemeContext from '../../ThemeContext';
+import { ThemeContext, UserContext } from '../../Contexts';
 import { useContext } from 'react';
-import { useCookies } from 'react-cookie';
 
 function DashBoard() {
     const [darkMode] = useContext(ThemeContext);
-    const [cookies, setCookies] = useCookies(['auth', 'email']);
-
-    const handleClick = () => {
-        setCookies('auth', 'false', { expires: new Date(9999, 0, 1) });
-        window.location.reload();
-    };
+    
+    const user = useContext(UserContext)
 
     return (
         <div
@@ -20,7 +15,7 @@ function DashBoard() {
         >
             <div className="welcome-msg">
                 <p>Bem vind@ de volta,</p>
-                <p>Kelvin Souza</p>
+                <p>{user?.name}</p>
             </div>
 
             <div className="user-info">

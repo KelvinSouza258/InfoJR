@@ -1,23 +1,34 @@
 import './styles.css';
 import { useState, FormEvent, useContext, Dispatch } from 'react';
 import { useCookies } from 'react-cookie';
-import ThemeContext from '../../ThemeContext';
+import { ThemeContext } from '../../Contexts';
+import users from '../../users';
 import eye from '../../assets/Eye.svg';
 import eyeWhite from '../../assets/EyeWhite.svg';
 import eyeSlash from '../../assets/EyeSlash.svg';
 import eyeSlashWhite from '../../assets/EyeSlashWhite.svg';
 
 function Login({
-    setLoginMsg,
+    showLoginMsg,
+    email,
+    setEmail,
+    password,
+    setPassword,
 }: {
-    setLoginMsg: Dispatch<React.SetStateAction<boolean>>;
+    showLoginMsg: (show: 'show' | 'hide', error?: 'success' | 'error') => void;
+    email: string;
+    setEmail: Dispatch<React.SetStateAction<string>>;
+    password: string;
+    setPassword: Dispatch<React.SetStateAction<string>>;
 }) {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const handleEyeClick = () => {
         setPasswordVisible(!passwordVisible);
     };
 
-    const fakeTimerForLogin = (ms: number) => {
+    const [, setCookies] = useCookies(['token', 'last-login-email']);
+
+    const timer = (ms: number) => {
         return new Promise((resolve) => setTimeout(resolve, ms));
     };
 
@@ -25,18 +36,31 @@ function Login({
         e.preventDefault();
 
         window.scrollTo(0, document.body.scrollHeight);
+        const user = users.find((user) => user.email === email.toLowerCase());
 
-        setCookies('email', email, { expires: new Date(9999, 0, 1) });
-        setLoginMsg(true);
-        await fakeTimerForLogin(3500);
-        setCookies('auth', 'true', { expires: new Date(9999, 0, 1) });
-        setLoginMsg(false);
-
-        window.location.reload();
+        if (user) {
+            if (user.password === password) {
+                showLoginMsg('show', 'success');
+                await timer(3500);
+                setCookies('token', window.btoa(user.id), {
+                    expires: new Date(9999, 0, 1),
+                });
+                setCookies('last-login-email', window.btoa(user.email), {
+                    expires: new Date(9999, 0, 1),
+                });
+                window.location.reload();
+            } else {
+                showLoginMsg('show', 'error');
+                await timer(3500);
+                showLoginMsg('hide');
+            }
+        } else {
+            showLoginMsg('show', 'error');
+            await timer(3500);
+            showLoginMsg('hide');
+        }
     };
 
-    const [cookies, setCookies] = useCookies();
-    const [email, setEmail] = useState(cookies.email);
     const [darkMode] = useContext(ThemeContext);
 
     return (
@@ -90,6 +114,9 @@ function Login({
                             }`}
                             type={passwordVisible ? 'text' : 'password'}
                             placeholder="Sua senha"
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                            }}
                         />
                         <button
                             type="button"
