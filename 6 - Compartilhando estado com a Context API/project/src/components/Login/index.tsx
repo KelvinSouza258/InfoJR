@@ -56,7 +56,7 @@ function Login({
             }
         } else {
             showLoginMsg('show', 'error');
-            await timer(3500);
+            await timer(3000);
             showLoginMsg('hide');
         }
     };

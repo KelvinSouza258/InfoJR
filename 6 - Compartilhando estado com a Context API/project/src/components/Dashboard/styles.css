@@ -9,7 +9,7 @@
 }
 
 .welcome-msg {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
 }
 
@@ -30,18 +30,18 @@
 }
 
 .data-title {
-    font-size: 16px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.25em;
 }
 
 .data-value {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
 }
 
 .gallery {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -67,16 +67,18 @@
 }
 
 .gallery-content button {
+    font-size: 16px;
     cursor: pointer;
     border-radius: 8px;
     color: #ffffff;
     background-color: #0147fa;
-    width: 320px;
+    width: 200px;
     height: 56px;
     font-weight: 700;
 }
 
 .gallery-content button:hover {
+    color: #0147fa;
     background-color: #a6bffd;
 }
 
@@ -85,11 +87,33 @@
     background-color: #232430;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+    .welcome-msg {
+        font-size: 36px;
+    }
+
+    .data-title {
+        font-size: 16px;
+    }
+
+    .data-value {
+        font-size: 36px;
+    }
+
+    .gallery {
+        font-size: 24px;
+    }
+
     .user-info {
         flex-direction: row;
     }
+}
+
+@media (min-width: 1024px) {
     .dashboard {
         width: 70%;
+    }
+    .gallery-content button {
+        width: 320px;
     }
 }

@@ -58,7 +58,7 @@ function App() {
         }
 
         window.scrollTo(0, 0);
-        
+
         // eslint-disable-next-line
     }, []);
 
@@ -85,13 +85,9 @@ function App() {
                     )}
 
                     <div
-                        className={
-                            loginMsg
-                                ? successLogin
-                                    ? 'login-msg'
-                                    : 'error login-msg'
-                                : 'hidden login-msg'
-                        }
+                        className={`login-msg ${loginMsg ? '' : 'hidden'} ${
+                            successLogin ? '' : 'error'
+                        }`}
                     >
                         {successLogin ? (
                             <>
@@ -104,7 +100,7 @@ function App() {
                         ) : (
                             <>
                                 <img src={xCircle} alt="" />
-                                <p className="error">
+                                <p>
                                     Erro ao realizar login. Verifique suas
                                     credenciais e tente novamente.
                                 </p>

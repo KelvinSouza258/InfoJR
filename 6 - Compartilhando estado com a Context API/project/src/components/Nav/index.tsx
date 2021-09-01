@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { useCookies } from 'react-cookie';
 import { ThemeContext, UserContext } from '../../Contexts';
-import avatar from '../../assets/Avatar.svg';
+import Avatar from '../../assets/Avatar.svg';
+import darkAvatar from '../../assets/DarkAvatar.svg';
 import users from '../../users';
 import './styles.css';
 import { useState } from 'react';
@@ -54,7 +55,7 @@ function NavBar({
             }
         } else {
             showLoginMsg('show', 'error');
-            await timer(3500);
+            await timer(3000);
             showLoginMsg('hide');
         }
     };
@@ -94,7 +95,11 @@ function NavBar({
                 {cookies.token ? (
                     <div className="nav-user">
                         <div className="nav-user-info">
-                            <img className="avatar" src={avatar} alt="" />
+                            <img
+                                className="avatar"
+                                src={darkMode ? darkAvatar : Avatar}
+                                alt=""
+                            />
                             <div>
                                 <p>{user?.name}</p>
                                 <p className="user-email">{user?.email}</p>

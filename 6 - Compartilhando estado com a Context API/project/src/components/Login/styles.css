@@ -94,7 +94,7 @@
     background-color: #232430;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
     .login-form {
         padding: 72px 32px;
     }

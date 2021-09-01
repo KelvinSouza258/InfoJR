@@ -19,8 +19,8 @@
     position: absolute;
     margin: auto;
     border-radius: 20px;
-    right: 5%;
     width: 90%;
+    right: 5%;
     background-color: #ffffff;
     top: 120px;
     display: flex;
@@ -48,6 +48,7 @@
 }
 
 .user-email {
+    font-size: 12px;
     color: #b2b3bf;
 }
 
@@ -139,7 +140,12 @@
     background-color: #232430;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+    .avatar {
+        width: 36px;
+        height: 36px;
+    }
+
     .nav-content {
         position: static;
         opacity: 1;
