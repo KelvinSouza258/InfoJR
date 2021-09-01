@@ -11,11 +11,6 @@
     color: #1d2143;
 }
 
-.dark-login-form {
-    background-color: #232430;
-    color: #ffffff;
-}
-
 .login-title {
     color: inherit;
     font-size: 24px;
@@ -84,10 +79,6 @@
     transition: background-color 0.3s;
 }
 
-.dark-login-span {
-    background-color: #232430;
-}
-
 .btn-eye {
     align-self: flex-end;
     cursor: pointer;
@@ -96,6 +87,11 @@
     margin-right: 16px;
     border: none;
     bottom: 32px;
+}
+
+.dark {
+    color: #ffffff;
+    background-color: #232430;
 }
 
 @media (min-width: 1440px) {

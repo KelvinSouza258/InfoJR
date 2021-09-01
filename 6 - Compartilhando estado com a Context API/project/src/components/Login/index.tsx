@@ -66,9 +66,7 @@ function Login({
     return (
         <>
             <form
-                className={`transition login-form ${
-                    darkMode ? 'dark-login-form' : ''
-                }`}
+                className={`transition login-form ${darkMode ? 'dark' : ''}`}
                 onSubmit={handleSubmit}
             >
                 <div>
@@ -81,9 +79,7 @@ function Login({
                 <div className="inputs">
                     <label className="login-label">
                         <span
-                            className={`login-span ${
-                                darkMode ? 'dark-login-span' : ''
-                            }`}
+                            className={`login-span ${darkMode ? 'dark' : ''}`}
                         >
                             Email
                         </span>
@@ -102,9 +98,7 @@ function Login({
                     </label>
                     <label className="login-label">
                         <span
-                            className={`login-span ${
-                                darkMode ? 'dark-login-span' : ''
-                            }`}
+                            className={`login-span ${darkMode ? 'dark' : ''}`}
                         >
                             Senha
                         </span>

@@ -1,5 +1,5 @@
 .dashboard {
-    width: 66%;
+    width: 100%;
     max-width: 1168px;
     flex-grow: 1;
     display: flex;
@@ -15,6 +15,7 @@
 
 .user-info {
     display: flex;
+    flex-direction: column;
     gap: 42px;
 }
 
@@ -77,4 +78,18 @@
 
 .gallery-content button:hover {
     background-color: #a6bffd;
+}
+
+.dark {
+    color: #ffffff;
+    background-color: #232430;
+}
+
+@media (min-width: 1024px) {
+    .user-info {
+        flex-direction: row;
+    }
+    .dashboard {
+        width: 70%;
+    }
 }

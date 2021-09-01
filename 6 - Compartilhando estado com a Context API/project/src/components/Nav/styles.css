@@ -10,18 +10,9 @@
     padding: 16px 24px;
 }
 
-.dark-navbar {
-    background-color: #232430;
-}
-
 .btn-list {
     background-color: transparent;
     cursor: pointer;
-}
-
-.display-none {
-    display: none;
-    opacity: 0;
 }
 
 .nav-content {
@@ -38,10 +29,6 @@
     align-items: center;
     gap: 52px;
     padding: 43px 0;
-}
-
-.dark-nav-content {
-    background-color: #232430;
 }
 
 .nav-user-info {
@@ -142,6 +129,16 @@
     background-color: #0147fa;
 }
 
+.display-none {
+    display: none;
+    opacity: 0;
+}
+
+.dark {
+    color: #ffffff;
+    background-color: #232430;
+}
+
 @media (min-width: 1024px) {
     .nav-content {
         position: static;
@@ -149,6 +146,11 @@
         flex-direction: row;
         padding: 0;
         background-color: transparent;
+    }
+
+    .display-none {
+        display: flex;
+        opacity: 1;
     }
 
     .nav-user {

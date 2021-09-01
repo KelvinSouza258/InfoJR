@@ -65,10 +65,10 @@ function NavBar({
     };
 
     return (
-        <div className={`transition navbar ${darkMode ? 'dark-navbar' : ''}`}>
+        <div className={`transition navbar ${darkMode ? 'dark' : ''}`}>
             <div
-                className={`${navOpen ? '' : 'display-none'} ${
-                    darkMode ? 'dark-nav-content' : ''
+                className={`transition ${navOpen ? '' : 'display-none'} ${
+                    darkMode ? 'dark' : ''
                 } nav-content`}
             >
                 <div>

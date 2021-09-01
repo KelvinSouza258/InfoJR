@@ -57,6 +57,8 @@ function App() {
             setEmail(window.atob(cookies['last-login-email']));
         }
 
+        window.scrollTo(0, 0);
+        
         // eslint-disable-next-line
     }, []);
 
