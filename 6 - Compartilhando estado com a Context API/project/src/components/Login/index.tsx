@@ -26,7 +26,7 @@ function Login({
         setPasswordVisible(!passwordVisible);
     };
 
-    const [, setCookies] = useCookies(['token', 'last-login-email']);
+    const [, setCookies] = useCookies(['token']);
 
     const timer = (ms: number) => {
         return new Promise((resolve) => setTimeout(resolve, ms));
@@ -45,9 +45,7 @@ function Login({
                 setCookies('token', window.btoa(user.id), {
                     expires: new Date(9999, 0, 1),
                 });
-                setCookies('last-login-email', window.btoa(user.email), {
-                    expires: new Date(9999, 0, 1),
-                });
+                
                 window.location.reload();
             } else {
                 showLoginMsg('show', 'error');

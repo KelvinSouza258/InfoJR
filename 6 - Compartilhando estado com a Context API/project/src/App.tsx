@@ -53,9 +53,6 @@ function App() {
             const id = window.atob(cookies.token);
             setUser(users.find((user) => user.id === id));
         }
-        if (cookies['last-login-email']) {
-            setEmail(window.atob(cookies['last-login-email']));
-        }
 
         window.scrollTo(0, 0);
 

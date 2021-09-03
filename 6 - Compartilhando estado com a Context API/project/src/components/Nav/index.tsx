@@ -43,9 +43,7 @@ function NavBar({
                 setCookies('token', window.btoa(user.id), {
                     expires: new Date(9999, 0, 1),
                 });
-                setCookies('last-login-email', window.btoa(user.email), {
-                    expires: new Date(9999, 0, 1),
-                });
+                
                 showLoginMsg('hide');
                 window.location.reload();
             } else {
