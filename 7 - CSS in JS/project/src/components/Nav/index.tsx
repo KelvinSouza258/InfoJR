@@ -6,12 +6,7 @@ import * as S from './styles';
 import users from '../../users';
 import { useState } from 'react';
 
-function NavBar({
-    showLoginMsg,
-    password,
-    email,
-    themeState,
-}: {
+interface IProps {
     showLoginMsg: (
         show: 'show' | 'hide',
         success?: 'success' | 'error'
@@ -19,7 +14,9 @@ function NavBar({
     password: string;
     email: string;
     themeState: [boolean, Dispatch<SetStateAction<boolean>>];
-}) {
+}
+
+const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
     const [navOpen, setNavOpen] = useState(false);
     const user = useContext(UserContext);
     const [darkMode, setDarkMode] = themeState;
@@ -166,6 +163,6 @@ function NavBar({
             </button>
         </S.NavBar>
     );
-}
+};
 
 export default NavBar;

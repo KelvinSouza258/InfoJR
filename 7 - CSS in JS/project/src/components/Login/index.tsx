@@ -1,26 +1,31 @@
-import { useState, FormEvent, Dispatch } from 'react';
+import { useState, FormEvent, Dispatch, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { useCookies } from 'react-cookie';
 import users from '../../users';
+import * as S from './styles';
 import eye from '../../assets/Eye.svg';
 import eyeWhite from '../../assets/EyeWhite.svg';
 import eyeSlash from '../../assets/EyeSlash.svg';
 import eyeSlashWhite from '../../assets/EyeSlashWhite.svg';
 
-function Login({
-    showLoginMsg,
-    email,
-    setEmail,
-    password,
-    setPassword,
-    darkMode,
-}: {
+interface IProps {
     showLoginMsg: (show: 'show' | 'hide', error?: 'success' | 'error') => void;
     email: string;
     setEmail: Dispatch<React.SetStateAction<string>>;
     password: string;
     setPassword: Dispatch<React.SetStateAction<string>>;
-    darkMode: boolean;
-}) {
+}
+
+const Login = ({
+    showLoginMsg,
+    email,
+    setEmail,
+    password,
+    setPassword,
+}: IProps) => {
+    
+    const { title: theme } = useContext(ThemeContext);
+
     const [passwordVisible, setPasswordVisible] = useState(false);
     const handleEyeClick = () => {
         setPasswordVisible(!passwordVisible);
@@ -60,64 +65,57 @@ function Login({
     };
 
     return (
-        <>
-            <form className={`transition login-form`} onSubmit={handleSubmit}>
-                <div>
-                    <h2 className="login-title">Fazer Login</h2>
-                    <p className="login-paragraph">
-                        Bem-vind@ de volta! Sentimos sua falta!
-                    </p>
-                </div>
+        <S.Form onSubmit={handleSubmit}>
+            <div>
+                <h2 className="login-title">Fazer Login</h2>
+                <p className="login-paragraph">
+                    Bem-vind@ de volta! Sentimos sua falta!
+                </p>
+            </div>
 
-                <div className="inputs">
-                    <label className="login-label">
-                        <span className={`login-span`}>Email</span>
-                        <input
-                            className={`transition login-input`}
-                            type="email"
-                            placeholder="Seu email"
-                            value={email}
-                            required={true}
-                            onChange={(e) => {
-                                setEmail(e.target.value);
-                            }}
+            <div className="inputs">
+                <S.LoginLabel>
+                    <span>Email</span>
+                    <input
+                        type="email"
+                        placeholder="Seu email"
+                        value={email}
+                        required={true}
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
+                    />
+                </S.LoginLabel>
+                <S.LoginLabel>
+                    <span>Senha</span>
+                    <input
+                        className={`transition login-input`}
+                        type={passwordVisible ? 'text' : 'password'}
+                        placeholder="Sua senha"
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                        }}
+                    />
+                    <button type="button" onClick={handleEyeClick}>
+                        <img
+                            src={
+                                passwordVisible
+                                    ? theme === 'dark'
+                                        ? eyeSlashWhite
+                                        : eyeSlash
+                                    : theme === 'dark'
+                                    ? eyeWhite
+                                    : eye
+                            }
+                            alt="an eye"
                         />
-                    </label>
-                    <label className="login-label">
-                        <span className={`login-span`}>Senha</span>
-                        <input
-                            className={`transition login-input`}
-                            type={passwordVisible ? 'text' : 'password'}
-                            placeholder="Sua senha"
-                            onChange={(e) => {
-                                setPassword(e.target.value);
-                            }}
-                        />
-                        <button
-                            type="button"
-                            className="btn-eye"
-                            onClick={handleEyeClick}
-                        >
-                            <img
-                                src={
-                                    passwordVisible
-                                        ? darkMode
-                                            ? eyeSlashWhite
-                                            : eyeSlash
-                                        : darkMode
-                                        ? eyeWhite
-                                        : eye
-                                }
-                                alt="an eye"
-                            />
-                        </button>
-                    </label>
-                </div>
+                    </button>
+                </S.LoginLabel>
+            </div>
 
-                <button className="btn-login">Fazer Login</button>
-            </form>
-        </>
+            <button className="btn-login">Fazer Login</button>
+        </S.Form>
     );
-}
+};
 
 export default Login;

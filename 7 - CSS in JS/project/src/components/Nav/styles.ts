@@ -105,7 +105,7 @@ export const NavContent = styled.div`
         line-height: 32px;
         background-color: transparent;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: background-color color 0.3s ease;
     }
 
     .btn-nav:hover {

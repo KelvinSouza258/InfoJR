@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import DashBoard from './components/Dashboard';
-import Login from './components/Login';
 import { useCookies } from 'react-cookie';
 import { ThemeProvider } from 'styled-components';
+import DashBoard from './components/Dashboard';
+import Login from './components/Login';
 import dark from './styles/themes/dark';
 import light from './styles/themes/light';
-import StyledApp from './styles/styledApp';
+import StyledApp from './styles/appStyles';
 import GlobalStyle from './styles/global';
 import UserContext from './UserContexts';
 import checkIcon from './assets/Icon.svg';
@@ -13,7 +13,7 @@ import xCircle from './assets/XCircle.svg';
 import NavBar from './components/Nav';
 import users from './users';
 
-function App() {
+const App = () => {
     const [loginMsg, setLoginMsg] = useState(false);
     const [successLogin, setSuccessLogin] = useState(false);
 
@@ -42,11 +42,11 @@ function App() {
         email: '',
         password: '',
     });
+
     const [cookies] = useCookies(['token', 'last-login-email']);
 
     const theme = localStorage.getItem('theme');
-    const darkModeHook = useState(theme === 'dark' ? true : false);
-    const [darkMode] = darkModeHook;
+    const [darkMode, setDarkMode] = useState(theme === 'dark' ? true : false);
 
     useEffect(() => {
         if (!theme) {
@@ -72,7 +72,7 @@ function App() {
                         showLoginMsg={showLoginMsg}
                         email={email}
                         password={password}
-                        themeState={darkModeHook}
+                        themeState={[darkMode, setDarkMode]}
                     />
                     {cookies.token ? (
                         <DashBoard />
@@ -83,7 +83,6 @@ function App() {
                             setEmail={setEmail}
                             password={password}
                             setPassword={setPassword}
-                            darkMode={darkMode}
                         />
                     )}
                     <div
@@ -113,6 +112,6 @@ function App() {
             </UserContext.Provider>
         </ThemeProvider>
     );
-}
+};
 
 export default App;

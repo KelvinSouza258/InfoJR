@@ -1,35 +1,36 @@
 import UserContext from '../../UserContexts';
+import * as S from './styles';
 import { useContext } from 'react';
 
-function DashBoard() {
+const DashBoard = () => {
     const user = useContext(UserContext);
 
     return (
-        <div className="transition dashboard">
+        <S.DashBoard>
             <div className="welcome-msg">
                 <p>Bem vind@ de volta,</p>
                 <p>{user?.name}</p>
             </div>
 
             <div className="user-info">
-                <div>
-                    <p className="data-title">Faturamento</p>
-                    <p className="data-value">R$ 12.030,00</p>
-                </div>
-                <div>
-                    <p className="data-title">Projetos feitos</p>
-                    <p className="data-value">23</p>
-                </div>
+                <S.Data>
+                    <p>Faturamento</p>
+                    <p>R$ 12.030,00</p>
+                </S.Data>
+                <S.Data>
+                    <p>Projetos feitos</p>
+                    <p>23</p>
+                </S.Data>
             </div>
 
-            <div className="gallery">
+            <S.Gallery>
                 <p>Galeria</p>
                 <div>
                     <p>Você ainda não possui fotos. Que tal adicionar uma?</p>
                     <button>Adicionar nova foto</button>
                 </div>
-            </div>
-        </div>
+            </S.Gallery>
+        </S.DashBoard>
     );
 }
 
