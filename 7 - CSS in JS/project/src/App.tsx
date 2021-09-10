@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { ThemeProvider } from 'styled-components';
+import usePersistentTheme from './usePersistentTheme';
 import DashBoard from './components/Dashboard';
 import Login from './components/Login';
 import dark from './styles/themes/dark';
@@ -44,27 +45,18 @@ const App = () => {
     });
 
     const [cookies] = useCookies(['token', 'last-login-email']);
-
-    const theme = localStorage.getItem('theme');
-    const [darkMode, setDarkMode] = useState(theme === 'dark' ? true : false);
+    const [theme, setTheme] = usePersistentTheme();
 
     useEffect(() => {
-        if (!theme) {
-            localStorage.setItem('theme', 'light');
-        }
-
         if (cookies.token) {
             const id = window.atob(cookies.token);
             setUser(users.find((user) => user.id === id));
         }
-
-        window.scrollTo(0, 0);
-
         // eslint-disable-next-line
     }, []);
 
     return (
-        <ThemeProvider theme={darkMode ? dark : light}>
+        <ThemeProvider theme={theme === 'dark' ? dark : light}>
             <UserContext.Provider value={user}>
                 <GlobalStyle />
                 <StyledApp>
@@ -72,7 +64,7 @@ const App = () => {
                         showLoginMsg={showLoginMsg}
                         email={email}
                         password={password}
-                        themeState={[darkMode, setDarkMode]}
+                        themeState={[theme, setTheme]}
                     />
                     {cookies.token ? (
                         <DashBoard />

@@ -13,13 +13,13 @@ interface IProps {
     ) => void;
     password: string;
     email: string;
-    themeState: [boolean, Dispatch<SetStateAction<boolean>>];
+    themeState: [string, Dispatch<SetStateAction<string>>];
 }
 
 const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
     const [navOpen, setNavOpen] = useState(false);
     const user = useContext(UserContext);
-    const [darkMode, setDarkMode] = themeState;
+    const [theme, setTheme] = themeState;
     const [cookies, setCookies, removeCookie] = useCookies([
         'token',
         'last-login-email',
@@ -68,14 +68,13 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                         <input
                             className="checkbox"
                             type="checkbox"
-                            checked={darkMode}
+                            checked={theme === 'dark'}
                             onChange={() => {
                                 localStorage.setItem(
                                     'theme',
-                                    `${darkMode ? 'light' : 'dark'}`
+                                    `${theme === 'dark' ? 'light' : 'dark'}`
                                 );
-
-                                setDarkMode(!darkMode);
+                                setTheme(theme === 'dark' ? 'light' : 'dark');
                             }}
                         />
                         <div className="switch-container">
@@ -116,14 +115,14 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                     >
                         <path
                             d="M25 7L7 25"
-                            stroke={`${darkMode ? 'white' : 'black'}`}
+                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
                         />
                         <path
                             d="M25 25L7 7"
-                            stroke={`${darkMode ? 'white' : 'black'}`}
+                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -139,21 +138,21 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                     >
                         <path
                             d="M5 16H27"
-                            stroke={`${darkMode ? 'white' : 'black'}`}
+                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
                         />
                         <path
                             d="M5 8H27"
-                            stroke={`${darkMode ? 'white' : 'black'}`}
+                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
                         />
                         <path
                             d="M5 24H27"
-                            stroke={`${darkMode ? 'white' : 'black'}`}
+                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
