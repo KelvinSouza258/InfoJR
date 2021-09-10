@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { ThemeProvider } from 'styled-components';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from 'react-router-dom';
 import usePersistentTheme from './usePersistentTheme';
 import DashBoard from './components/Dashboard';
 import Login from './components/Login';
+import Popup from './components/PopupLogin';
 import dark from './styles/themes/dark';
 import light from './styles/themes/light';
-import StyledApp from './styles/appStyles';
-import GlobalStyle from './styles/global';
+import { GlobalStyle, App as StyledApp } from './styles/global';
 import UserContext from './UserContexts';
-import checkIcon from './assets/Icon.svg';
-import xCircle from './assets/XCircle.svg';
 import NavBar from './components/Nav';
 import users from './users';
 
@@ -59,48 +63,39 @@ const App = () => {
         <ThemeProvider theme={theme === 'dark' ? dark : light}>
             <UserContext.Provider value={user}>
                 <GlobalStyle />
-                <StyledApp>
-                    <NavBar
-                        showLoginMsg={showLoginMsg}
-                        email={email}
-                        password={password}
-                        themeState={[theme, setTheme]}
-                    />
-                    {cookies.token ? (
-                        <DashBoard />
-                    ) : (
-                        <Login
+                <Router>
+                    <StyledApp>
+                        <NavBar
                             showLoginMsg={showLoginMsg}
                             email={email}
-                            setEmail={setEmail}
                             password={password}
-                            setPassword={setPassword}
+                            themeState={[theme, setTheme]}
                         />
-                    )}
-                    <div
-                        className={`login-msg ${loginMsg ? '' : 'hidden'} ${
-                            successLogin ? '' : 'error'
-                        }`}
-                    >
-                        {successLogin ? (
-                            <>
-                                <img src={checkIcon} alt="" />
-                                <p>
-                                    Login efetuado com sucesso! Aguarde um
-                                    momento enquanto atualizamos a página
-                                </p>
-                            </>
+                        {cookies.token ? (
+                            <Redirect to="/dashboard" />
                         ) : (
-                            <>
-                                <img src={xCircle} alt="" />
-                                <p>
-                                    Erro ao realizar login. Verifique suas
-                                    credenciais e tente novamente.
-                                </p>
-                            </>
+                            <Redirect to="/login" />
                         )}
-                    </div>
-                </StyledApp>
+                        <Switch>
+                            <Route path="/login">
+                                <Login
+                                    showLoginMsg={showLoginMsg}
+                                    email={email}
+                                    setEmail={setEmail}
+                                    password={password}
+                                    setPassword={setPassword}
+                                />
+                                <Popup
+                                    loginMsg={loginMsg}
+                                    successLogin={successLogin}
+                                />
+                            </Route>
+                            <Route path="/dashboard">
+                                <DashBoard />
+                            </Route>
+                        </Switch>
+                    </StyledApp>
+                </Router>
             </UserContext.Provider>
         </ThemeProvider>
     );

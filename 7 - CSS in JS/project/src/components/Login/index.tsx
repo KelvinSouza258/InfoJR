@@ -23,7 +23,6 @@ const Login = ({
     password,
     setPassword,
 }: IProps) => {
-    
     const { title: theme } = useContext(ThemeContext);
 
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -51,7 +50,7 @@ const Login = ({
                     expires: new Date(9999, 0, 1),
                 });
 
-                window.location.reload();
+                window.location.reload()
             } else {
                 showLoginMsg('show', 'error');
                 await timer(3500);
