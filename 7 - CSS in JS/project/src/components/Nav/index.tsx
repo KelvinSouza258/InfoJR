@@ -3,8 +3,8 @@ import { useCookies } from 'react-cookie';
 import UserContext from '../../UserContexts';
 import Avatar from '../../assets/Avatar.svg';
 import * as S from './styles';
-import users from '../../users';
 import { useState } from 'react';
+import useLogin from '../../useLogin';
 
 interface IProps {
     showLoginMsg: (
@@ -20,45 +20,9 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
     const [navOpen, setNavOpen] = useState(false);
     const user = useContext(UserContext);
     const [theme, setTheme] = themeState;
-    const [cookies, setCookies, removeCookie] = useCookies([
-        'token',
-        'last-login-email',
-    ]);
+    const [cookies, , removeCookie] = useCookies(['token', 'last-login-email']);
 
-    const timer = (ms: number) => {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-    };
-
-    const handleLogin = async () => {
-        window.scrollTo(0, document.body.scrollHeight);
-        const user = users.find((user) => user.email === email.toLowerCase());
-
-        if (user) {
-            if (user.password === password) {
-                showLoginMsg('show', 'success');
-                await timer(3500);
-                setCookies('token', window.btoa(user.id), {
-                    expires: new Date(9999, 0, 1),
-                });
-
-                showLoginMsg('hide');
-                window.location.reload();
-            } else {
-                showLoginMsg('show', 'error');
-                await timer(3500);
-                showLoginMsg('hide');
-            }
-        } else {
-            showLoginMsg('show', 'error');
-            await timer(3000);
-            showLoginMsg('hide');
-        }
-    };
-
-    const handleLogout = async () => {
-        removeCookie('token');
-        window.location.reload();
-    };
+    const handleLogin = useLogin(showLoginMsg, email, password);
 
     return (
         <S.NavBar>
@@ -92,7 +56,13 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                                 <p className="user-email">{user?.email}</p>
                             </div>
                         </div>
-                        <button className={`btn-nav`} onClick={handleLogout}>
+                        <button
+                            className={`btn-nav`}
+                            onClick={() => {
+                                removeCookie('token');
+                                window.location.reload();
+                            }}
+                        >
                             Fazer logout
                         </button>
                     </div>

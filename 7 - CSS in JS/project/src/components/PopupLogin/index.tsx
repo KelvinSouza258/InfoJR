@@ -3,19 +3,19 @@ import checkIcon from '../../assets/Icon.svg';
 import xCircle from '../../assets/XCircle.svg';
 
 interface IProps {
-    loginMsg: boolean;
-    successLogin: boolean;
+    msgVisible: boolean;
+    success: boolean;
 }
 
-const Popup = ({ loginMsg, successLogin }: IProps) => {
+const Popup = ({ msgVisible, success }: IProps) => {
     return (
         <S.Popup>
             <div
-                className={`${loginMsg ? 'show' : ''} ${
-                    successLogin ? '' : 'error'
+                className={`${msgVisible ? 'show' : ''} ${
+                    success ? '' : 'error'
                 }`}
             >
-                {successLogin ? (
+                {success ? (
                     <>
                         <img src={checkIcon} alt="" />
                         <p>

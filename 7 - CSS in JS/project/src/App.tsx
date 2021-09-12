@@ -8,6 +8,7 @@ import {
     Redirect,
 } from 'react-router-dom';
 import usePersistentTheme from './usePersistentTheme';
+import useLoginMsg from './useLoginMsg';
 import DashBoard from './components/Dashboard';
 import Login from './components/Login';
 import Popup from './components/PopupLogin';
@@ -19,20 +20,8 @@ import NavBar from './components/Nav';
 import users from './users';
 
 const App = () => {
-    const [loginMsg, setLoginMsg] = useState(false);
-    const [successLogin, setSuccessLogin] = useState(false);
-
-    const showLoginMsg = (
-        show: 'show' | 'hide',
-        success: 'success' | 'error' = 'error'
-    ) => {
-        setLoginMsg(show === 'show');
-        setSuccessLogin(success === 'success');
-    };
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [user, setUser] = useState<
         | {
               id: string;
@@ -47,9 +36,9 @@ const App = () => {
         email: '',
         password: '',
     });
-
-    const [cookies] = useCookies(['token', 'last-login-email']);
+    const [cookies] = useCookies(['token']);
     const [theme, setTheme] = usePersistentTheme();
+    const {msgVisible, success,showLoginMsg}= useLoginMsg();
 
     useEffect(() => {
         if (cookies.token) {
@@ -86,8 +75,8 @@ const App = () => {
                                     setPassword={setPassword}
                                 />
                                 <Popup
-                                    loginMsg={loginMsg}
-                                    successLogin={successLogin}
+                                    msgVisible={msgVisible}
+                                    success={success}
                                 />
                             </Route>
                             <Route path="/dashboard">

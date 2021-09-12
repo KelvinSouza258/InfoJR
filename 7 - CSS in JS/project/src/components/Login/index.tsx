@@ -1,7 +1,6 @@
-import { useState, FormEvent, Dispatch, useContext } from 'react';
+import { useState, Dispatch, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useCookies } from 'react-cookie';
-import users from '../../users';
+import useLogin from '../../useLogin';
 import * as S from './styles';
 import eye from '../../assets/Eye.svg';
 import eyeWhite from '../../assets/EyeWhite.svg';
@@ -30,38 +29,7 @@ const Login = ({
         setPasswordVisible(!passwordVisible);
     };
 
-    const [, setCookies] = useCookies(['token']);
-
-    const timer = (ms: number) => {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-    };
-
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        window.scrollTo(0, document.body.scrollHeight);
-        const user = users.find((user) => user.email === email.toLowerCase());
-
-        if (user) {
-            if (user.password === password) {
-                showLoginMsg('show', 'success');
-                await timer(3500);
-                setCookies('token', window.btoa(user.id), {
-                    expires: new Date(9999, 0, 1),
-                });
-
-                window.location.reload()
-            } else {
-                showLoginMsg('show', 'error');
-                await timer(3500);
-                showLoginMsg('hide');
-            }
-        } else {
-            showLoginMsg('show', 'error');
-            await timer(3000);
-            showLoginMsg('hide');
-        }
-    };
+    const handleSubmit = useLogin(showLoginMsg, email, password);
 
     return (
         <S.Form onSubmit={handleSubmit}>
