@@ -18,6 +18,7 @@ import { GlobalStyle, App as StyledApp } from './styles/global';
 import UserContext from './UserContext';
 import NavBar from './components/Nav';
 import users from './users';
+import Profile from './components/Profile';
 
 const App = () => {
     const [email, setEmail] = useState('');
@@ -38,7 +39,7 @@ const App = () => {
     });
     const [cookies] = useCookies(['token']);
     const [theme, setTheme] = usePersistentTheme();
-    const {msgVisible, success,showLoginMsg}= useLoginMsg();
+    const { msgVisible, success, showLoginMsg } = useLoginMsg();
 
     useEffect(() => {
         if (cookies.token) {
@@ -60,13 +61,13 @@ const App = () => {
                             password={password}
                             themeState={[theme, setTheme]}
                         />
-                        {cookies.token ? (
-                            <Redirect to="/dashboard" />
-                        ) : (
-                            <Redirect to="/login" />
-                        )}
                         <Switch>
                             <Route path="/login">
+                                {cookies.token ? (
+                                    <Redirect to="/dashboard" />
+                                ) : (
+                                    <Redirect to="/login" />
+                                )}
                                 <Login
                                     showLoginMsg={showLoginMsg}
                                     email={email}
@@ -80,7 +81,16 @@ const App = () => {
                                 />
                             </Route>
                             <Route path="/dashboard">
+                                {cookies.token ? null : (
+                                    <Redirect to="/login" />
+                                )}
                                 <DashBoard />
+                            </Route>
+                            <Route path="/profile">
+                                {cookies.token ? null : (
+                                    <Redirect to="/login" />
+                                )}
+                                <Profile />
                             </Route>
                         </Switch>
                     </StyledApp>

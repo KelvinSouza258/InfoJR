@@ -5,6 +5,7 @@ import Avatar from '../../assets/Avatar.svg';
 import * as S from './styles';
 import { useState } from 'react';
 import useLogin from '../../useLogin';
+import { Redirect } from 'react-router';
 
 interface IProps {
     showLoginMsg: (
@@ -68,7 +69,13 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                     </div>
                 ) : (
                     <>
-                        <button className={`btn-nav`} onClick={handleLogin}>
+                        <button
+                            className={`btn-nav`}
+                            onClick={(e) => {
+                                handleLogin(e);
+                                <Redirect to="/dashboard" />
+                            }}
+                        >
                             Fazer login
                         </button>
                     </>
