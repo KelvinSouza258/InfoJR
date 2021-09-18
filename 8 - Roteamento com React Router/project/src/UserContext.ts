@@ -5,6 +5,8 @@ const defaultUser = {
     name: '',
     email: '',
     password: '',
+    projectProgress: 0,
+    codeQuality: 0,
 };
 
 const UserContext = createContext<
@@ -13,6 +15,8 @@ const UserContext = createContext<
           name: string;
           email: string;
           password: string;
+          projectProgress: number;
+          codeQuality: number;
       }
     | undefined
 >(defaultUser);

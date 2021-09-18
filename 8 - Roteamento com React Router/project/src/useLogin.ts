@@ -32,6 +32,7 @@ const useLogin = (
                 setCookies('token', window.btoa(user.id), {
                     expires: new Date(9999, 0, 1),
                 });
+                window.location.reload();
             } else {
                 showLoginMsg('show', 'error');
                 await timer(3000);

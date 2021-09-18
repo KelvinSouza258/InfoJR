@@ -29,6 +29,8 @@ const App = () => {
               name: string;
               email: string;
               password: string;
+              projectProgress: number;
+              codeQuality: number;
           }
         | undefined
     >({
@@ -36,6 +38,8 @@ const App = () => {
         name: '',
         email: '',
         password: '',
+        projectProgress: 0,
+        codeQuality: 0,
     });
     const [cookies] = useCookies(['token']);
     const [theme, setTheme] = usePersistentTheme();
@@ -91,6 +95,13 @@ const App = () => {
                                     <Redirect to="/login" />
                                 )}
                                 <Profile />
+                            </Route>
+                            <Route path="/">
+                                {cookies.token ? (
+                                    <Redirect to="/dashboard" />
+                                ) : (
+                                    <Redirect to="/login" />
+                                )}
                             </Route>
                         </Switch>
                     </StyledApp>
