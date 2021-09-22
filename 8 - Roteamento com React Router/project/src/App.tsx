@@ -1,36 +1,36 @@
-import { useEffect, useState } from 'react';
-import { useCookies } from 'react-cookie';
-import { ThemeProvider } from 'styled-components';
+import React, { useEffect, useState } from 'react'
+import { useCookies } from 'react-cookie'
+import { ThemeProvider } from 'styled-components'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Redirect,
-} from 'react-router-dom';
-import usePersistentTheme from './usePersistentTheme';
-import useLoginMsg from './useLoginPopUp';
-import DashBoard from './components/Dashboard';
-import Login from './components/Login';
-import Popup from './components/PopupLogin';
-import dark from './styles/themes/dark';
-import light from './styles/themes/light';
-import { GlobalStyle, App as StyledApp } from './styles/global';
-import UserContext from './UserContext';
-import NavBar from './components/Nav';
-import users from './users';
-import Profile from './components/Profile';
+    Redirect
+} from 'react-router-dom'
+import usePersistentTheme from './hooks/usePersistentTheme'
+import useLoginMsg from './hooks/useLoginPopUp'
+import DashBoard from './components/Dashboard'
+import Login from './components/Login'
+import Popup from './components/PopupLogin'
+import dark from './styles/themes/dark'
+import light from './styles/themes/light'
+import { GlobalStyle, App as StyledApp } from './styles/global'
+import UserContext from './hooks/UserContext'
+import NavBar from './components/Nav'
+import users from './users'
+import Profile from './components/Profile'
 
 const App = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [user, setUser] = useState<
         | {
-              id: string;
-              name: string;
-              email: string;
-              password: string;
-              projectProgress: number;
-              codeQuality: number;
+              id: string
+              name: string
+              email: string
+              password: string
+              projectProgress: number
+              codeQuality: number
           }
         | undefined
     >({
@@ -39,19 +39,18 @@ const App = () => {
         email: '',
         password: '',
         projectProgress: 0,
-        codeQuality: 0,
-    });
-    const [cookies] = useCookies(['token']);
-    const [theme, setTheme] = usePersistentTheme();
-    const { msgVisible, success, showLoginMsg } = useLoginMsg();
+        codeQuality: 0
+    })
+    const [cookies] = useCookies(['token'])
+    const [theme, setTheme] = usePersistentTheme()
+    const { msgVisible, success, showLoginMsg } = useLoginMsg()
 
     useEffect(() => {
         if (cookies.token) {
-            const id = window.atob(cookies.token);
-            setUser(users.find((user) => user.id === id));
+            const id = window.atob(cookies.token)
+            setUser(users.find((user) => user.id === id))
         }
-        // eslint-disable-next-line
-    }, []);
+    }, [cookies.token])
 
     return (
         <ThemeProvider theme={theme === 'dark' ? dark : light}>
@@ -108,7 +107,7 @@ const App = () => {
                 </Router>
             </UserContext.Provider>
         </ThemeProvider>
-    );
-};
+    )
+}
 
-export default App;
+export default App

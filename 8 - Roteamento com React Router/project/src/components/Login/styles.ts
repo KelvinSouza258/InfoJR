@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Form = styled.form`
     border-radius: 30px;
@@ -62,7 +62,7 @@ export const Form = styled.form`
             font-size: 14px;
         }
     }
-`;
+`
 
 export const LoginLabel = styled.label`
     display: flex;
@@ -108,4 +108,4 @@ export const LoginLabel = styled.label`
     button:hover {
         background-color: transparent;
     }
-`;
+`

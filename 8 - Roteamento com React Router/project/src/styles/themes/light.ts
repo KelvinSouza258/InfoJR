@@ -7,8 +7,8 @@ const lightTheme = {
         primary: '#1D2143',
         secondary: '#B2B3BF',
 
-        buttonNav: '#0147FA',
-    },
-};
+        buttonNav: '#0147FA'
+    }
+}
 
-export default lightTheme;
+export default lightTheme

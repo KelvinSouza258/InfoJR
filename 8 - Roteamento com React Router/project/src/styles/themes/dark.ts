@@ -7,8 +7,8 @@ const darkTheme = {
         primary: '#FFFFFF',
         secondary: '#B2B3BF',
 
-        buttonNav: '#A6BFFD',
-    },
-};
+        buttonNav: '#A6BFFD'
+    }
+}
 
-export default darkTheme;
+export default darkTheme

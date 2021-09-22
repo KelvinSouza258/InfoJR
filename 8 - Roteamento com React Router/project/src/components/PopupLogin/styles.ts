@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Popup = styled.div`
     div {
@@ -26,4 +26,4 @@ export const Popup = styled.div`
     .error {
         background-color: #e9453a;
     }
-`;
+`

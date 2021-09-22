@@ -1,29 +1,27 @@
-import { Dispatch, SetStateAction, useContext } from 'react';
-import { useCookies } from 'react-cookie';
-import UserContext from '../../UserContext';
-import Avatar from '../../assets/Avatar.svg';
-import * as S from './styles';
-import { useState } from 'react';
-import useLogin from '../../useLogin';
-import { Redirect } from 'react-router';
+/* eslint-disable indent */
+import React, { Dispatch, SetStateAction, useState, useContext } from 'react'
+import { useCookies } from 'react-cookie'
+import avatar from '../../assets/Avatar.svg'
+import useLogin from '../../hooks/useLogin'
+import UserContext from '../../hooks/UserContext'
+import { Redirect, Link } from 'react-router-dom'
+import * as S from './styles'
 
 interface IProps {
-    showLoginMsg: (
-        show: 'show' | 'hide',
-        success?: 'success' | 'error'
-    ) => void;
-    password: string;
-    email: string;
-    themeState: [string, Dispatch<SetStateAction<string>>];
+    showLoginMsg: (show: 'show' | 'hide', success?: 'success' | 'error') => void
+    password: string
+    email: string
+    themeState: [string, Dispatch<SetStateAction<string>>]
 }
 
 const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
-    const [navOpen, setNavOpen] = useState(false);
-    const user = useContext(UserContext);
-    const [theme, setTheme] = themeState;
-    const [cookies, , removeCookie] = useCookies(['token', 'last-login-email']);
+    const [navOpen, setNavOpen] = useState(false)
+    const [theme, setTheme] = themeState
+    const [cookies, , removeCookie] = useCookies(['token', 'last-login-email'])
+    const user = useContext(UserContext)
+    // const userRef: LegacyRef<HTMLDivElement> = useRef(null)
 
-    const handleLogin = useLogin(showLoginMsg, email, password);
+    const handleLogin = useLogin(showLoginMsg, email, password)
 
     return (
         <S.NavBar>
@@ -38,8 +36,8 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                                 localStorage.setItem(
                                     'theme',
                                     `${theme === 'dark' ? 'light' : 'dark'}`
-                                );
-                                setTheme(theme === 'dark' ? 'light' : 'dark');
+                                )
+                                setTheme(theme === 'dark' ? 'light' : 'dark')
                             }}
                         />
                         <div className="switch-container">
@@ -48,20 +46,21 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                         <span>Dark Mode</span>
                     </label>
                 </S.ThemeSwitch>
+
                 {cookies.token ? (
                     <div className="nav-user">
-                        <div className="nav-user-info">
-                            <img className="avatar" src={Avatar} alt="" />
+                        <Link to="/profile" className="nav-user-info">
+                            <img className="avatar" src={avatar} alt="" />
                             <div>
                                 <p>{user?.name}</p>
                                 <p className="user-email">{user?.email}</p>
                             </div>
-                        </div>
+                        </Link>
                         <button
-                            className={`btn-nav`}
+                            className={'btn-nav'}
                             onClick={() => {
-                                removeCookie('token');
-                                window.location.reload();
+                                removeCookie('token')
+                                return <Redirect to="/login" />
                             }}
                         >
                             Fazer logout
@@ -70,10 +69,10 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                 ) : (
                     <>
                         <button
-                            className={`btn-nav`}
+                            className={'btn-nav'}
                             onClick={(e) => {
-                                handleLogin(e);
-                                <Redirect to="/dashboard" />
+                                handleLogin(e)
+                                return <Redirect to="/dashboard" />
                             }}
                         >
                             Fazer login
@@ -92,17 +91,17 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                     >
                         <path
                             d="M25 7L7 25"
-                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            stroke={theme === 'dark' ? 'white' : 'black'}
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <path
                             d="M25 25L7 7"
-                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            stroke={theme === 'dark' ? 'white' : 'black'}
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                     </svg>
                 ) : (
@@ -115,30 +114,30 @@ const NavBar = ({ showLoginMsg, password, email, themeState }: IProps) => {
                     >
                         <path
                             d="M5 16H27"
-                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            stroke={theme === 'dark' ? 'white' : 'black'}
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <path
                             d="M5 8H27"
-                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            stroke={theme === 'dark' ? 'white' : 'black'}
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <path
                             d="M5 24H27"
-                            stroke={`${theme === 'dark' ? 'white' : 'black'}`}
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            stroke={theme === 'dark' ? 'white' : 'black'}
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                     </svg>
                 )}
             </button>
         </S.NavBar>
-    );
-};
+    )
+}
 
-export default NavBar;
+export default NavBar

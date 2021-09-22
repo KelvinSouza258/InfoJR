@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const NavBar = styled.div`
     width: 100%;
@@ -29,7 +29,7 @@ export const NavBar = styled.div`
             display: flex;
         }
     }
-`;
+`
 
 export const NavContent = styled.div`
     position: absolute;
@@ -48,10 +48,12 @@ export const NavContent = styled.div`
     transition: background-color 0.3s ease;
 
     .nav-user-info {
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        color: inherit;
         font-weight: 400;
         gap: 13px;
     }
@@ -112,7 +114,7 @@ export const NavContent = styled.div`
         background-color: #0147fa;
         color: #ffffff;
     }
-`;
+`
 
 export const ThemeSwitch = styled.div`
     label {
@@ -161,4 +163,4 @@ export const ThemeSwitch = styled.div`
         transform: translateX(16px);
         background-color: #ffffff;
     }
-`;
+`

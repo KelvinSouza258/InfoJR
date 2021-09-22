@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -18,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Sora', sans-serif;
         font-weight: 400;
     }
-`;
+`
 
 export const App = styled.div`
     min-height: 100vh;
@@ -32,4 +31,4 @@ export const App = styled.div`
     color: ${(props) => props.theme.colors.primary};
     position: relative;
     transition: background-color 0.3s;
-`;
+`

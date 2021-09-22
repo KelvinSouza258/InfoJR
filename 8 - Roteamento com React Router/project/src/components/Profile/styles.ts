@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Profile = styled.div`
     display: flex;
@@ -7,12 +7,16 @@ export const Profile = styled.div`
     width: 90%;
     max-width: 490px;
     flex-grow: 1;
-    margin-top: 100px;  
+
+    .back {
+        color: inherit;
+        width: 36px;
+    }
 
     @media (min-width: 768px) {
         gap: 70px;
     }
-`;
+`
 
 export const UserInfo = styled.div`
     display: flex;
@@ -31,7 +35,7 @@ export const UserInfo = styled.div`
     p:nth-of-type(2) {
         color: #b2b3bf;
     }
-`;
+`
 
 export const UserDetails = styled.div`
     display: flex;
@@ -57,10 +61,10 @@ export const UserDetails = styled.div`
             font-size: 16px;
         }
     }
-`;
+`
 
 interface IGraph {
-    progress?: number;
+    progress?: number
 }
 
 export const Graph = styled.div<IGraph>`
@@ -80,7 +84,7 @@ export const Graph = styled.div<IGraph>`
         border-radius: 3px;
         z-index: 100;
     }
-`;
+`
 
 export const PremiumDetails = styled.div`
     display: flex;
@@ -102,4 +106,4 @@ export const PremiumDetails = styled.div`
     p {
         text-align: center;
     }
-`;
+`

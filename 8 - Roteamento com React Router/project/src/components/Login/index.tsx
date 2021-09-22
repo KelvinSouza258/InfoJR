@@ -1,19 +1,20 @@
-import { useState, Dispatch, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-import useLogin from '../../useLogin';
-import * as S from './styles';
-import eye from '../../assets/Eye.svg';
-import eyeWhite from '../../assets/EyeWhite.svg';
-import eyeSlash from '../../assets/EyeSlash.svg';
-import eyeSlashWhite from '../../assets/EyeSlashWhite.svg';
-import { Redirect } from 'react-router';
+/* eslint-disable indent */
+import React, { useState, Dispatch, useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import useLogin from '../../hooks/useLogin'
+import * as S from './styles'
+import eye from '../../assets/Eye.svg'
+import eyeWhite from '../../assets/EyeWhite.svg'
+import eyeSlash from '../../assets/EyeSlash.svg'
+import eyeSlashWhite from '../../assets/EyeSlashWhite.svg'
+import { Redirect } from 'react-router'
 
 interface IProps {
-    showLoginMsg: (show: 'show' | 'hide', error?: 'success' | 'error') => void;
-    email: string;
-    setEmail: Dispatch<React.SetStateAction<string>>;
-    password: string;
-    setPassword: Dispatch<React.SetStateAction<string>>;
+    showLoginMsg: (show: 'show' | 'hide', error?: 'success' | 'error') => void
+    email: string
+    setEmail: Dispatch<React.SetStateAction<string>>
+    password: string
+    setPassword: Dispatch<React.SetStateAction<string>>
 }
 
 const Login = ({
@@ -21,22 +22,22 @@ const Login = ({
     email,
     setEmail,
     password,
-    setPassword,
+    setPassword
 }: IProps) => {
-    const { title: theme } = useContext(ThemeContext);
+    const { title: theme } = useContext(ThemeContext)
 
-    const [passwordVisible, setPasswordVisible] = useState(false);
+    const [passwordVisible, setPasswordVisible] = useState(false)
     const handleEyeClick = () => {
-        setPasswordVisible(!passwordVisible);
-    };
+        setPasswordVisible(!passwordVisible)
+    }
 
-    const handleSubmit = useLogin(showLoginMsg, email, password);
+    const handleSubmit = useLogin(showLoginMsg, email, password)
 
     return (
         <S.Form
             onSubmit={(e) => {
-                handleSubmit(e);
-                <Redirect to="/dashboard" />
+                handleSubmit(e)
+                return <Redirect to="/dashboard" />
             }}
         >
             <div>
@@ -55,18 +56,18 @@ const Login = ({
                         value={email}
                         required={true}
                         onChange={(e) => {
-                            setEmail(e.target.value);
+                            setEmail(e.target.value)
                         }}
                     />
                 </S.LoginLabel>
                 <S.LoginLabel>
                     <span>Senha</span>
                     <input
-                        className={`transition login-input`}
+                        className={'transition login-input'}
                         type={passwordVisible ? 'text' : 'password'}
                         placeholder="Sua senha"
                         onChange={(e) => {
-                            setPassword(e.target.value);
+                            setPassword(e.target.value)
                         }}
                     />
                     <button type="button" onClick={handleEyeClick}>
@@ -88,7 +89,7 @@ const Login = ({
 
             <button className="btn-login">Fazer Login</button>
         </S.Form>
-    );
-};
+    )
+}
 
-export default Login;
+export default Login

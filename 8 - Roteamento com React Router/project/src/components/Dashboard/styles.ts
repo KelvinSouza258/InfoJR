@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const DashBoard = styled.div`
     width: 100%;
@@ -28,7 +28,7 @@ export const DashBoard = styled.div`
     @media (min-width: 1024px) {
         width: 70%;
     }
-`;
+`
 
 export const Data = styled.div`
     flex-grow: 1;
@@ -61,7 +61,7 @@ export const Data = styled.div`
             font-size: 36px;
         }
     }
-`;
+`
 
 export const Gallery = styled.div`
     font-size: 16px;
@@ -115,4 +115,4 @@ export const Gallery = styled.div`
             width: 320px;
         }
     }
-`;
+`

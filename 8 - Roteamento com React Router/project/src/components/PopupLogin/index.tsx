@@ -1,10 +1,11 @@
-import * as S from './styles';
-import checkIcon from '../../assets/Icon.svg';
-import xCircle from '../../assets/XCircle.svg';
+import React from 'react'
+import * as S from './styles'
+import checkIcon from '../../assets/Icon.svg'
+import xCircle from '../../assets/XCircle.svg'
 
 interface IProps {
-    msgVisible: boolean;
-    success: boolean;
+    msgVisible: boolean
+    success: boolean
 }
 
 const Popup = ({ msgVisible, success }: IProps) => {
@@ -34,7 +35,7 @@ const Popup = ({ msgVisible, success }: IProps) => {
                 )}
             </div>
         </S.Popup>
-    );
-};
+    )
+}
 
-export default Popup;
+export default Popup

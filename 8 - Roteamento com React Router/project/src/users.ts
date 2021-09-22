@@ -5,7 +5,7 @@ const users = [
         email: 'a.silva@frontend.infojr.br',
         password: 'alessandra_frontend',
         projectProgress: 65,
-        codeQuality: 84,
+        codeQuality: 84
     },
     {
         id: 'zTyRv6-HpQHyyjStGgalP',
@@ -13,7 +13,7 @@ const users = [
         email: 'a.shyjada@frontend.infojr.br',
         password: 'alexandre_frontend',
         projectProgress: 95,
-        codeQuality: 78,
+        codeQuality: 78
     },
     {
         id: 'QpvKItPjmF81vZioxeWFv',
@@ -21,7 +21,7 @@ const users = [
         email: 'b.morais@frontend.infojr.br',
         password: 'beatriz_frontend',
         projectProgress: 36,
-        codeQuality: 32,
+        codeQuality: 32
     },
     {
         id: 'LzsefwFh1erdGMJBgNAHL',
@@ -29,7 +29,7 @@ const users = [
         email: 'b.lucas@frontend.infojr.br',
         password: 'bruno_frontend',
         projectProgress: 19,
-        codeQuality: 77,
+        codeQuality: 77
     },
     {
         id: '99Y5Ivi8JJAnhNvw1pkaw',
@@ -37,7 +37,7 @@ const users = [
         email: 'c.oliveira@frontend.infojr.br',
         password: 'caio_frontend',
         projectProgress: 81,
-        codeQuality: 67,
+        codeQuality: 67
     },
     {
         id: 'D1F4zRQRhGpqPdWxLUSe0',
@@ -45,7 +45,7 @@ const users = [
         email: 'j.victor@frontend.infojr.br',
         password: 'joao_frontend',
         projectProgress: 69,
-        codeQuality: 73,
+        codeQuality: 73
     },
     {
         id: 'dqAtaq-8PNKJwlFpK8nz7',
@@ -53,7 +53,7 @@ const users = [
         email: 'l.king@frontend.infojr.br',
         password: 'liang_frontend',
         projectProgress: 98,
-        codeQuality: 62,
+        codeQuality: 62
     },
     {
         id: 'jFV8lWdTw2-ZuncpIXLKU',
@@ -61,7 +61,7 @@ const users = [
         email: 'l.morais@frontend.infojr.br',
         password: 'lucas_frontend',
         projectProgress: 50,
-        codeQuality: 83,
+        codeQuality: 83
     },
     {
         id: 'nYFjFhsgBjx0ndM1FaUOS',
@@ -69,7 +69,7 @@ const users = [
         email: 'l.dias@frontend.infojr.br',
         password: 'lavio_frontend',
         projectProgress: 76,
-        codeQuality: 95,
+        codeQuality: 95
     },
     {
         id: 'IsJT67IISWOkb3YVbnS_R',
@@ -77,7 +77,7 @@ const users = [
         email: 'm.quevedo@frontend.infojr.br',
         password: 'matheus_frontend',
         projectProgress: 57,
-        codeQuality: 86,
+        codeQuality: 86
     },
     {
         id: '8WkSl5J33lRq3mAFin0Fk',
@@ -85,8 +85,8 @@ const users = [
         email: 'm.kelvin@frontend.infojr.br',
         password: 'michael_frontend',
         projectProgress: 25,
-        codeQuality: 23,
-    },
-];
+        codeQuality: 23
+    }
+]
 
-export default users;
+export default users

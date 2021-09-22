@@ -1,9 +1,9 @@
-import UserContext from '../../UserContext';
-import * as S from './styles';
-import { useContext } from 'react';
+import React, { useContext } from 'react'
+import UserContext from '../../hooks/UserContext'
+import * as S from './styles'
 
 const DashBoard = () => {
-    const user = useContext(UserContext);
+    const user = useContext(UserContext)
 
     return (
         <S.DashBoard>
@@ -31,7 +31,7 @@ const DashBoard = () => {
                 </div>
             </S.Gallery>
         </S.DashBoard>
-    );
+    )
 }
 
-export default DashBoard;
+export default DashBoard
