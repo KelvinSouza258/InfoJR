@@ -25,6 +25,7 @@ Junto a isso, é preciso lidar com erros para dar feedback ao usuário sobre as 
 
 ### Regras
 
+- O uso do ESLint e do Prettier é obrigatório para manter os padrões de projeto
 - O uso do Typescript é obrigatório e sua habilidade de tipar corretamente será avaliada
 - Você deverá recriar a interface descrita na seção de [descrição da atividade](#descricao-da-atividade)
 - A página deverá ser responsiva, conforme o mockup exibido na [descrição da atividade](#descricao-da-atividade)
@@ -35,6 +36,7 @@ Junto a isso, é preciso lidar com erros para dar feedback ao usuário sobre as 
 - A página `/results` deverá exibir o resultado da pesquisa, com os buscados da API, além dos mesmos filtros da página anterior, já preenchidos com os valores usados na pesquisa passada
   - A página `/results` deverá persistir os filtros da pesquisa no caso de um refresh, a abordagem utilizada para implementar essa funcionalidade será avaliada.
 - A forma de consulta à API é livre, mas recomenda-se usar Axios ou Fetch
+- Você deverá lidar com estados de carregamento e erros na aplicação
 
 ## Materiais de apoio
 
