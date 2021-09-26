@@ -47,6 +47,20 @@ Junto a isso, é preciso lidar com erros para dar feedback ao usuário sobre as 
 - [Axios](https://axios-http.com/docs/intro)
 - [Error Boundaries](https://pt-br.reactjs.org/docs/error-boundaries.html)
 
+- [Código desenvolvido durante a RN](https://github.com/Todomir/rn-8)
+
 ## Sugestões
 
 Como [Error Boundaries](https://pt-br.reactjs.org/docs/error-boundaries.html) são componentes de classe, e o código acaba sendo igual para muitos projetos, foi criada a lib [react-error-boundary](https://github.com/bvaughn/react-error-boundary), com a implementação do error boundary. Essa lib pode ser usada em outros projetos, mas inicialmente é recomendado implementar você mesmo para entender como funciona.
+
+### Comando com todos as dependências necessárias para o ESLint e Prettier
+
+```bash
+npm install --save-dev prettier eslint eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-hooks
+```
+Ou, caso esteja usando Yarn:
+
+```bash
+yarn add -D prettier eslint eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react 
+```
+
