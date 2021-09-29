@@ -11,7 +11,7 @@ const Button = styled.button`
 
     border-radius: 10px;
 
-    min-width: 248px;
+    width: 100%;
 
     padding: 15px 0;
 
@@ -23,8 +23,9 @@ const Button = styled.button`
         background-color: hsla(192, 100%, 45%, 1);
     }
 
-    @media (min-width: 975px) {
+    @media (min-width: 800px) {
         font-size: 18px;
+        max-width: 248px;
     }
 `
 

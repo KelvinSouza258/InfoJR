@@ -6,11 +6,12 @@ export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
         text-decoration: none;
         border: none;
     }
-    
+
     body {
-        font-family: 'Raleway', 'sans-serif';
+        font-family: 'Raleway', sans-serif;
     }
 `

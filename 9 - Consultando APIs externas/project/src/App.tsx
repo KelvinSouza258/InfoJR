@@ -1,7 +1,6 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Button } from './components/Atoms'
-import { SearchForm } from './components/Molecules'
-import { Home, Results } from './components/Templates'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import { Home, Results } from './components/Pages'
 
 const App: React.FC = () => {
     return (
@@ -13,8 +12,6 @@ const App: React.FC = () => {
                     </Route>
                     <Route path="/">
                         <Home />
-                        <SearchForm />
-                        <Button>Opa</Button>
                     </Route>
                 </Switch>
             </Router>

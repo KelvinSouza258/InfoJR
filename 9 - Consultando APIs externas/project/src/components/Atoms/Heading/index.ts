@@ -4,14 +4,14 @@ const HEADING_VARIANTS = {
     normal: css`
         font-size: 24px;
 
-        @media (min-width: 975px) {
+        @media (min-width: 800px) {
             font-size: 64px;
         }
     `,
     big: css`
         font-size: 48px;
 
-        @media (min-width: 975px) {
+        @media (min-width: 800px) {
             font-size: 72px;
         }
     `

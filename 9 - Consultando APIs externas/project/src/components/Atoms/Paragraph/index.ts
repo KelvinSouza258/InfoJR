@@ -5,7 +5,7 @@ const PARAGRAPH_VARIANTS = {
         font-weight: 400;
         font-size: 14px;
 
-        @media (min-width: 975px) {
+        @media (min-width: 800px) {
             font-size: 24px;
         }
     `,
@@ -18,7 +18,7 @@ const PARAGRAPH_VARIANTS = {
             color: hsla(0, 0%, 74%, 1);
         }
 
-        @media (min-width: 975px) {
+        @media (min-width: 800px) {
             font-size: 64px;
 
             span {
