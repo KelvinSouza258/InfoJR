@@ -2,17 +2,17 @@ import styled, { css } from 'styled-components'
 
 const HEADING_VARIANTS = {
     normal: css`
-        font-size: 24px;
+        font-size: 14px;
 
-        @media (min-width: 800px) {
-            font-size: 64px;
+        @media (min-width: 768px) {
+            font-size: 24px;
         }
     `,
     big: css`
-        font-size: 48px;
+        font-size: 24px;
 
-        @media (min-width: 800px) {
-            font-size: 72px;
+        @media (min-width: 768px) {
+            font-size: 64px;
         }
     `
 }

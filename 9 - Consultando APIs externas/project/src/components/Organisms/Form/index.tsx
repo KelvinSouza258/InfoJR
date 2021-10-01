@@ -1,31 +1,49 @@
 import { useEffect, useState } from 'react'
+import { Redirect } from 'react-router'
 
-import { getCountries } from '../../../hooks/getContent'
+import { getCountries, ICountries } from '../../../hooks/getContent'
 import { Button } from '../../Atoms'
 import { SelectInput } from '../../Molecules'
 import * as S from './styles'
 
 const Form: React.FC = () => {
-    const [countries, setCountries] = useState<string[]>([])
+    const [countries, setCountries] = useState<ICountries[]>([])
     const [selectedCountry, setSelectedCountry] = useState('')
     const [selectedStatus, setSelectedStatus] = useState('')
+    const [search, setSearch] = useState(false)
 
-    const status = ['confirmed', 'deaths', 'recovered']
+    const status = ['Confirmed', 'Deaths', 'Recovered']
 
     useEffect(() => {
         getCountries()
-            .then((data) => setCountries(data.map((item) => item.Country)))
+            .then((data) => setCountries(data))
             .catch((error) => {
                 throw error
             })
+
+        setSearch(false)
     }, [])
 
+    const [slug, setSlug] = useState('')
+
+    useEffect(() => {
+        const country = countries.find(
+            (country) => country.Country === selectedCountry
+        )
+
+        setSlug(country?.Slug ?? '')
+    }, [selectedCountry])
+
     return (
-        <S.Form>
+        <S.Form
+            onSubmit={() => {
+                setSearch(true)
+            }}
+        >
             <S.InputArea>
                 <SelectInput
                     label="Country"
-                    data={countries}
+                    data={countries.map((data) => data.Country)}
                     state={selectedCountry}
                     setState={setSelectedCountry}
                 />
@@ -37,6 +55,11 @@ const Form: React.FC = () => {
                 />
             </S.InputArea>
             <Button>Search</Button>
+            {search ? (
+                <Redirect
+                    to={`/results/${slug}/${selectedStatus.toLocaleLowerCase()}`}
+                />
+            ) : null}
         </S.Form>
     )
 }

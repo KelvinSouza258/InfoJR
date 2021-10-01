@@ -7,7 +7,7 @@ const App: React.FC = () => {
         <div className="App">
             <Router>
                 <Switch>
-                    <Route path="/results">
+                    <Route path="/results/:slug/:status">
                         <Results />
                     </Route>
                     <Route path="/">

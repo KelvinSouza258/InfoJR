@@ -24,10 +24,15 @@ export const Menu = styled.div`
     .swap-icon::after {
         transform: rotate(-180deg);
     }
+
+    @media (min-width: 768px) {
+        font-size: 14px;
+    }
 `
 
 export const SelectedOption = styled.div`
     font-weight: 400;
+    font-size: 14px;
     color: hsla(210, 84%, 15%, 1);
 
     padding: 8px;
@@ -52,6 +57,10 @@ export const SelectedOption = styled.div`
         right: 8px;
 
         transition: all 0.3s ease;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 16px;
     }
 `
 

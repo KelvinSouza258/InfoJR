@@ -23,7 +23,7 @@ const Button = styled.button`
         background-color: hsla(192, 100%, 45%, 1);
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 768px) {
         font-size: 18px;
         max-width: 248px;
     }

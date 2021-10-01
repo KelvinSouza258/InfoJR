@@ -14,4 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Raleway', sans-serif;
     }
+
+    .App {
+        min-height: 100vh;
+
+        padding: 24px 39px;
+    }
 `
