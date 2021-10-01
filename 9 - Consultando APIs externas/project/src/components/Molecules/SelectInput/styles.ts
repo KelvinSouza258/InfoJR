@@ -28,6 +28,10 @@ export const Menu = styled.div`
     @media (min-width: 768px) {
         font-size: 14px;
     }
+
+    .placeholder {
+        color: hsla(0, 0%, 74%, 1);
+    }
 `
 
 export const SelectedOption = styled.div`

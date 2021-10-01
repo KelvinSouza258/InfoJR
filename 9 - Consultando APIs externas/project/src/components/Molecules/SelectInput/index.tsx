@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
+import useOnClickOutside from '../../../hooks/useClickOutSide'
 import { Option } from '../../Atoms'
 import { Menu, OptionsContainer, SelectedOption } from './styles'
 
@@ -18,23 +19,28 @@ const SelectInput: React.FC<ISelectProps> = ({
 }: ISelectProps) => {
     const [menuOpen, setMenuOpen] = useState(false)
 
-    useEffect(() => setState(`Select a ${label.toLowerCase()}`), [])
+    const inputRef = useRef(null)
+
+    useOnClickOutside(inputRef, () => setMenuOpen(false))
 
     return (
-        <Menu>
+        <Menu ref={inputRef}>
             {label}
             <SelectedOption
                 role="button"
                 tabIndex={0}
                 onClick={() => setMenuOpen(!menuOpen)}
-                className={menuOpen ? 'swap-icon' : ''}
+                className={`${menuOpen ? 'swap-icon' : ''} ${
+                    state === '' ? 'placeholder' : ''
+                }`}
             >
-                {state}
+                {state === '' ? `Select a ${label.toLowerCase()}` : state}
             </SelectedOption>
             <OptionsContainer
                 className={menuOpen ? 'active' : ''}
                 onClick={(e) => {
                     const target = e.target as HTMLInputElement
+
                     if (target.value !== undefined) {
                         setState(target.value)
                         setMenuOpen(false)

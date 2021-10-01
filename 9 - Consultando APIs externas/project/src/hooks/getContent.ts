@@ -8,9 +8,10 @@ export interface ICountries {
 
 export const getCountries = async (): Promise<ICountries[]> => {
     const res = await fetch('https://api.covid19api.com/countries')
-    const body = await res.json()
 
-    return body
+    if (res.status !== 200) throw new Error(`${res.status}`)
+
+    return await res.json()
 }
 
 export interface ICountryInfo {
@@ -31,11 +32,8 @@ interface IGetCoutryProps {
 
 export const getCountryInfo = async ({
     country,
-    status,
-    setLoading
+    status
 }: IGetCoutryProps): Promise<ICountryInfo[]> => {
-    setLoading('loading')
-
     const date = new Date()
 
     const today = `${date.getFullYear()}-${
@@ -45,9 +43,12 @@ export const getCountryInfo = async ({
     const yesterday = `${date.getFullYear()}-${date.getMonth() + 1}-${
         date.getDate() - 1
     }`
+
     const res = await fetch(
         `https://api.covid19api.com/country/${country}/status/${status}?from=${yesterday}T00:00:00Z&to=${today}T00:00:00Z`
     )
+
+    if (res.status !== 200) throw new Error(`${res.status}`)
 
     return await res.json()
 }

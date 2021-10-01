@@ -1,13 +1,6 @@
 import styled from 'styled-components'
 
-export const Home = styled.main`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 138px;
-`
-
-export const Content = styled.div`
+export const Home = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;

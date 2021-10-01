@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
-    
+export const GlobalStyle = createGlobalStyle` 
     * {
         margin: 0;
         padding: 0;
@@ -19,5 +17,12 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
 
         padding: 24px 39px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 138px;
+
+        position: relative;
     }
 `

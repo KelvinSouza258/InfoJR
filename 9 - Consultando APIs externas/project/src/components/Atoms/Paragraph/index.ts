@@ -13,6 +13,10 @@ const PARAGRAPH_VARIANTS = {
         font-size: 36px;
         font-weight: 700;
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         span {
             font-size: 24px;
             color: hsla(0, 0%, 74%, 1);
