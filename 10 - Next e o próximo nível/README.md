@@ -62,5 +62,5 @@ yarn json-server --watch cms.json
 
 ## Materiais de apoio
 
-- [Next.js]("https://nextjs.org/docs/getting-started")
+- [Next.js](https://nextjs.org/docs/getting-started)
 - [json-server](github.com/typicode/json-server)
