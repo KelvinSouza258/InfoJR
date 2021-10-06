@@ -38,13 +38,13 @@ yarn add json-server
 e depois, rodar o comando:
 
 ```bash
-npm run json-server --watch cms.json
+npx run json-server --watch cms.json --port 4000
 ```
 
 ou
 
 ```bash
-yarn json-server --watch cms.json
+yarn json-server --watch cms.json --port 4000
 ```
 
 ### Regras
