@@ -17,13 +17,13 @@ const Footer: React.FC = () => {
             </S.Logo>
 
             <S.FooterLinks>
-                <Link href="/">
+                <Link href="#">
                     <a>Twitter</a>
                 </Link>
-                <Link href="/">
+                <Link href="#">
                     <a>Linkedin</a>
                 </Link>
-                <Link href="/">
+                <Link href="#">
                     <a>RSS</a>
                 </Link>
             </S.FooterLinks>

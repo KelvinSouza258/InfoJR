@@ -10,4 +10,14 @@ export default createGlobalStyle`
     body {
         font-family: 'DM Sans', sans-serif;
     }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        object-fit: cover;
+        object-position: 0 center;
+    }
 `

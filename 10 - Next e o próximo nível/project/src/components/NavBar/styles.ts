@@ -12,6 +12,11 @@ export const Navbar = styled.nav`
     @media (max-width: 975px) {
         padding: 30px 30px;
 
+        img {
+            width: 90px;
+            height: 43px;
+        }
+
         div.menu-active {
             display: flex;
             flex-direction: column;
@@ -25,7 +30,7 @@ export const Navbar = styled.nav`
 
             background-color: #ffffff;
 
-            animation: menu-animation 0.3s linear;
+            animation: menu-animation 0.4s ease-in;
 
             @keyframes menu-animation {
                 from {

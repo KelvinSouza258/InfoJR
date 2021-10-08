@@ -10,12 +10,16 @@ const Navbar: React.FC = () => {
 
     return (
         <S.Navbar>
-            <Image
-                src="/logo_info.svg"
-                alt="logo infojr"
-                width="186"
-                height="90"
-            />
+            <Link href="/">
+                <a>
+                    <Image
+                        src="/logo_info.svg"
+                        alt="logo infojr"
+                        width="186"
+                        height="90"
+                    />
+                </a>
+            </Link>
 
             <S.MenuIcon
                 className={`${menuOpen ? 'active' : ''}`}
