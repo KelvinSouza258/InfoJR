@@ -1,4 +1,4 @@
-# Atividade 10 - Next e o próximo nível
+# Atividade 11 - Gerenciamento de Conteúdo com Storyblok CMS
 
 Flexibilizando o conteúdo de nossos sites
 
