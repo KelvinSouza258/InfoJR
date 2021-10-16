@@ -85,6 +85,7 @@ export function useStoryblok(
             // first load the bridge, then initialize the event listeners
             addBridge(initEventListeners)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return story
