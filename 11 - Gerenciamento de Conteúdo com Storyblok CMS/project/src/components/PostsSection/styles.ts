@@ -87,18 +87,6 @@ export const PostsSection = styled.div`
 export const Post = styled.a`
     flex-basis: 304px;
 
-    :nth-of-type(1) img {
-        object-position: 0 top;
-    }
-
-    :nth-of-type(4) img {
-        object-position: 0 -40px;
-    }
-
-    :nth-of-type(5) img {
-        object-position: 0 -50px;
-    }
-
     h2,
     p {
         padding: 0 21px;
