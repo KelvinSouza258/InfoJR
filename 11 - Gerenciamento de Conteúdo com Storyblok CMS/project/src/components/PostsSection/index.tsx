@@ -88,6 +88,7 @@ const PostsSection: React.FC<{ blok: IBlok }> = ({ blok }) => {
                 </a>
             </Link>
             <S.Divider />
+            <h2 className="section-title">Todos os Artigos</h2>
             <S.PostsSection>
                 {posts.map((post: IPost) => (
                     <Link href={`/${post.slug}`} passHref key={post.slug}>

@@ -8,15 +8,6 @@ export const Home = styled.main`
     margin-top: 100px;
     margin-bottom: 132px;
 
-    @media (min-width: 975px) {
-        margin-top: 170px;
-        margin-bottom: 324px;
-
-        .section-title {
-            font-size: 44px;
-        }
-    }
-
     .section-title {
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
@@ -24,6 +15,14 @@ export const Home = styled.main`
 
         text-align: center;
         margin-bottom: 64px;
+    }
+    @media (min-width: 975px) {
+        margin-top: 170px;
+        margin-bottom: 324px;
+
+        .section-title {
+            font-size: 44px;
+        }
     }
 `
 
