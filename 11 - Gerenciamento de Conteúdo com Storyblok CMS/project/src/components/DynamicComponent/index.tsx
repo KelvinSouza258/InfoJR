@@ -1,14 +1,12 @@
 import SbEditable from 'storyblok-react'
 
-import FirstPost from '../FirstPost'
 import Page from '../Page'
 import Post from '../Post'
-import PostsSection from '../PostsSections'
+import PostsSection from '../PostsSection'
 
 // resolve Storyblok components to Next.js components
 const Components = {
     page: Page,
-    firstPost: FirstPost,
     postsSection: PostsSection,
     post: Post
 }

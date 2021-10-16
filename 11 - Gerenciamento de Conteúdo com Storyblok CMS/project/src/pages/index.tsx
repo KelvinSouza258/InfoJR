@@ -4,7 +4,6 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 // import Link from 'next/link'
 import DynamicComponent from '../components/DynamicComponent'
 import Storyblok, { useStoryblok } from '../lib/storyblok'
-import * as S from '../styles/pages/Home'
 // import formatDate from '../utils/formatDate'
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -13,11 +12,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
     story = useStoryblok(story, preview)
 
-    return (
-        <S.Home>
-            <DynamicComponent blok={story.content} />
-        </S.Home>
-    )
+    return <DynamicComponent blok={story.content} />
 }
 
 export default Home
@@ -32,7 +27,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         resolve_relations?: string[]
     } = {
         version: 'draft',
-        resolve_relations: ['firstPost.post', 'postsSection.posts']
+        resolve_relations: ['postsSection.posts']
     }
 
     if (context.preview ?? false) {

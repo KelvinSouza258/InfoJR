@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import * as S from '../../styles/pages/Post'
 import useFormatDate from '../../utils/formatDate'
+import { IPostContent } from '../PostsSection'
+import * as S from './styles'
 
-const PostPage: React.FC<{ blok: any }> = ({ blok }) => {
+const PostPage: React.FC<{ blok: IPostContent }> = ({ blok }) => {
     const post = blok
-    console.log(post)
     return (
-        <S.Posts postId={blok.slug}>
+        <S.Posts>
             <header className="container">
                 <h1>{post.title}</h1>
                 <p>{post.description}</p>

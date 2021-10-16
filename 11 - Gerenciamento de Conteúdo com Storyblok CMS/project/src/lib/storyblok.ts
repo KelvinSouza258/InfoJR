@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
@@ -26,7 +27,7 @@ export function useStoryblok(
         if (typeof StoryblokBridge !== 'undefined') {
             // initialize the bridge with your token
             const storyblokInstance = new StoryblokBridge({
-                resolve_relations: ['firstPost.post', 'postsSection.posts']
+                resolve_relations: ['postsSection.posts']
             })
 
             // reload on Next.js page on save or publish event in the Visual Editor
@@ -52,6 +53,7 @@ export function useStoryblok(
                         }
                     })
                     .catch((error) => {
+                        // eslint-disable-next-line no-console
                         console.log(error)
                     })
             })

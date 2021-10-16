@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/indent */
 import styled from 'styled-components'
 
-export const Posts = styled.main<{ postId: string }>`
+export const Posts = styled.main`
     margin-top: 150px;
 
     header {
@@ -24,21 +24,7 @@ export const Posts = styled.main<{ postId: string }>`
     }
 
     .image-container img {
-        object-position: ${({ postId }) => {
-            switch (postId) {
-                case 'Zfs4fhKBKY6ekA':
-                    return '0 30%'
-
-                case 'IhhgGaiNn24R33':
-                    return '0 top'
-
-                case 'j0sXdaB4K7TrN9':
-                    return '0 25%'
-
-                default:
-                    return '0 center'
-            }
-        }};
+        object-position: center;
     }
 
     header > h1 {

@@ -54,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         starts_with: 'posts'
     })
 
-    const paths: any[] = []
+    const paths: Array<{ params: { id: string } }> = []
     Object.keys(data.links).forEach((linkKey) => {
         // don't create routes for folders and the index page
         if (
