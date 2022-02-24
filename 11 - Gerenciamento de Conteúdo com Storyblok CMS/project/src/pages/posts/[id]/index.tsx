@@ -4,8 +4,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { StoryData } from 'storyblok-js-client'
 
-import DynamicComponent from '../../components/DynamicComponent'
-import Storyblok, { useStoryblok } from '../../lib/storyblok'
+import DynamicComponent from '../../../components/DynamicComponent'
+import Storyblok, { useStoryblok } from '../../../lib/storyblok'
 // import useFormatDate from '../../../utils/formatDate'
 
 const Post: React.FC<{ story: StoryData; preview: any }> = ({
@@ -54,7 +54,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
         starts_with: 'posts'
     })
 
-    const paths: Array<{ params: { id: string } }> = []
+    const paths: { params: { id: string } }[] = []
+
     Object.keys(data.links).forEach((linkKey) => {
         // don't create routes for folders and the index page
         if (
@@ -65,9 +66,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         }
         // get array for slug because of catch all
         const slug = data.links[linkKey].slug
-        // remove the posts part from the slug
-        const newSlug = slug.replace('posts', '')
-        const [, splittedSlug] = newSlug.split('/')
+        const [, splittedSlug] = slug.split('/')
 
         paths.push({ params: { id: splittedSlug } })
     })
